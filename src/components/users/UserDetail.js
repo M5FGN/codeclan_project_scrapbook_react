@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const UserDetail = () => {
+
+const UserDetail = ({user}) => {
+
 
     return (
         <div>
-            <h1>User Name</h1>
+            <h2>{user.name}</h2>
             <p> Profile Pic</p>
-            <p>Age</p>
-            <p>Bio</p>
+            <p>{user.dateOfBirth}</p>
+            <p>{user.bio}</p>
         </div>
 
     )

@@ -1,17 +1,22 @@
 import React from 'react';
 import User from '../components/users/User';
-import Message from '../components/messages/Message';
-import Post from     '../components/posts/Post';
+import UserDetail from '../components/users/UserDetail';
 
-const UserContainer =() =>{
+const UserContainer =({user}) =>{
+
+    if (!user){
+        return "Loading..."
+    }
+
+    // const url = "/users/" + user.id;
 
     return (
 
         <div>
         <h1>User Container</h1>
-        <User />
-        <Message />
-        <Post />
+
+
+        <UserDetail user={user} />
 
         </div>
     )

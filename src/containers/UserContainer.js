@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import User from '../components/users/User';
 import UserDetail from '../components/users/UserDetail';
 
 const UserContainer =({user}) =>{
+    const [rooms, setRooms] = useState([]);
 
     if (!user){
         return "Loading..."
@@ -17,6 +18,7 @@ const UserContainer =({user}) =>{
 
 
         <UserDetail user={user} />
+
 
         </div>
     )

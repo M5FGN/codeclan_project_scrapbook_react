@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import UserRooms from "../users/UserRooms"
 
 
 const UserDetail = ({user}) => {
@@ -10,6 +11,7 @@ const UserDetail = ({user}) => {
             <p> Profile Pic</p>
             <p>{user.dateOfBirth}</p>
             <p>{user.bio}</p>
+            <p><UserRooms user={user}/></p>
         </div>
 
     )

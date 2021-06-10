@@ -6,8 +6,8 @@ const RoomDetail = () => {
 
         <div>
             <h1>Room Name</h1>
-            <p>Room Bio</p>
-            <p>Members</p>
+            {/* <p>Room Bio</p>
+            <p>Members</p> */}
         </div>
     )
 

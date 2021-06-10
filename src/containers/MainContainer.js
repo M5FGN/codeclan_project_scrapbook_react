@@ -15,6 +15,7 @@ if (user) {
         <div>
             <p>Main Container</p>
             <UserContainer user={user} />
+            
         </div>
         ) } else {
     return (

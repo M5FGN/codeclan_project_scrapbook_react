@@ -16,6 +16,8 @@ const UserForm = ({ setUser }) => {
       .then((res) => res.json())
       .then((user) => {
         setUser(user);
+        window.sessionStorage.setItem("userId", user.id);
+        console.log(window.sessionStorage.getItem("userId"));
         history.push("/");
       });
   };

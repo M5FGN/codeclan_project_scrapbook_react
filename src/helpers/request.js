@@ -7,6 +7,12 @@ class Request {
     return fetch(this.url).then((res) => res.json());
   }
 
+  getById(id) {
+    return fetch(this.url + id).then((res) => {
+      return res.json();
+    });
+  }
+
   delete() {
     return fetch(this.url, {
       method: "DELETE",

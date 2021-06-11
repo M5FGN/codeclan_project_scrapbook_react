@@ -57,7 +57,7 @@ const MainContainer = () => {
               path={"/rooms/:id"}
               render={(props) => {
                 const id = props.match.params.id;
-                const foundRoom = rooms.find((room) => {
+                const foundRoom = user.rooms.find((room) => {
                   return Number(room.id) == Number(id);
                 });
 

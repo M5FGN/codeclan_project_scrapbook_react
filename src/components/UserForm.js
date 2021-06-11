@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import NavBar from "./NavBar";
+import Logo from "./Logo";
+import Footer from "../components/Footer";
 
 const UserForm = ({ setUser }) => {
   let history = useHistory();
@@ -26,9 +27,11 @@ const UserForm = ({ setUser }) => {
   return (
     <div>
 
-      <NavBar />
-      <h1>User Form</h1>
-      <form onSubmit={handleLogIn}>
+      <Logo />
+
+      <div className="card">
+        <h2>Log In to ScrapBook ...</h2>
+      <form className="form" onSubmit={handleLogIn}>
         <label>Username ... </label>
         <input
           type="text"
@@ -41,11 +44,13 @@ const UserForm = ({ setUser }) => {
           placeholder="Enter Password ..."
           name="password"
         ></input>
-        <input type="submit" value="Login"></input>
+        <input className="button" type="submit" value="Log In ..."></input>
       </form>
       <h3>
         <a href="/signup">Don't have an account?</a>
       </h3>
+    </div>
+    <Footer />
     </div>
   );
 };

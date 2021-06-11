@@ -3,7 +3,7 @@ import UserRooms from "../users/UserRooms";
 
 const UserDetail = ({ user }) => {
   return (
-    <div>
+    <div className="card detailsbox">
       <h2>{user.name}</h2>
       <p> Profile Pic</p>
       <p>{user.dateOfBirth}</p>

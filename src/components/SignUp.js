@@ -1,6 +1,8 @@
 import React from "react";
 import Request from "../helpers/request";
 import { useHistory } from "react-router-dom";
+import Logo from "./Logo"
+import Footer from "../components/Footer";
 
 const SignUp = () => {
   const request = new Request("http://localhost:8080/api/users");
@@ -28,9 +30,13 @@ const SignUp = () => {
     }
   };
   return (
-    <>
-      <h2>Sign up</h2>
-      <form onSubmit={handleSignUp}>
+
+    <div>
+      <Logo />
+
+    <div className="card">
+      <h2>Sign Up to ScrapBook ...</h2>
+      <form className="form" onSubmit={handleSignUp}>
         <label htmlFor="">Name</label>
         <input type="text" name="name" />
         <label htmlFor="">Date Of Birth</label>
@@ -39,10 +45,12 @@ const SignUp = () => {
         <input type="text" name="password" />
         <label htmlFor="">Confirm Password</label>
         <input type="text" name="confirmPassword" />
-        <input type="submit" value="Sign Up" />
+        <input className="button" type="submit" value="Sign Up..." />
       </form>
       <p>{errorMessage}</p>
-    </>
+    </div>
+    <Footer />
+    </div>
   );
 };
 

@@ -4,9 +4,16 @@ import Logo from "../components/Logo";
 const NavBar = () => {
 
     return (
-        <>
-      <Logo />
-        </>
+        <div className="nav">
+            <div className="logo"><Logo /></div>
+            <div className="heading">Heading</div>
+            <div className="links">
+                <ul>
+                    <li>Log Out</li>
+                    <li>My Profile</li>
+                </ul>
+            </div>
+        </div>
     )
 }
 export default NavBar;

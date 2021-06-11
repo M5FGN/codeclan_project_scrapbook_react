@@ -56,6 +56,12 @@ const MainContainer = () => {
             />
             <Route
               exact
+              path="/rooms"
+              render={() => {
+                return <RoomContainer rooms={rooms} />;
+              }}
+            />
+            <Route
               path={"/rooms/:id"}
               render={(props) => {
                 const id = props.match.params.id;

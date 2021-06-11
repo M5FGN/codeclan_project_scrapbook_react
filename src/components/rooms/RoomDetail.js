@@ -1,16 +1,13 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const RoomDetail = () => {
-
-    return (
-
-        <div>
-            <h1>Room Name</h1>
-            {/* <p>Room Bio</p>
-            <p>Members</p> */}
-        </div>
-    )
-
-}
+const RoomDetail = ({ room }) => {
+  return (
+    <div>
+      <h2>{room ? room.roomName : null}</h2>
+      <Link to={`/rooms/${room? room.id:null}`}>show</Link>
+    </div>
+  );
+};
 
 export default RoomDetail;

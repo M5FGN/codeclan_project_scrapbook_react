@@ -5,7 +5,6 @@ const Room = ({ foundRoom }) => {
   return (
     <div>
       <h1>{foundRoom ? foundRoom.roomName : null}</h1>
-      <RoomDetail />
     </div>
   );
 };

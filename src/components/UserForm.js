@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import NavBar from "./NavBar";
 
 const UserForm = ({ setUser }) => {
   let history = useHistory();
@@ -24,6 +25,8 @@ const UserForm = ({ setUser }) => {
 
   return (
     <div>
+
+      <NavBar />
       <h1>User Form</h1>
       <form onSubmit={handleLogIn}>
         <label>Username ... </label>

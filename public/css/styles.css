@@ -1,0 +1,16 @@
+body {
+    background-image: url(../images/background.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: stretch;
+}
+
+h1, h2 {
+    font-family: 'Philosopher', sans-serif;
+}
+
+.logo {
+    padding: 10px;
+    width: 250px;
+}

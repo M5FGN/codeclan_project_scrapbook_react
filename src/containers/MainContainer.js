@@ -13,27 +13,30 @@ import {
   Redirect,
 } from "react-router-dom";
 import Room from "../components/rooms/Room";
+import { findAllByAltText } from "@testing-library/dom";
 
 const MainContainer = () => {
   const [room, setRoom] = useState(null);
   const [rooms, setRooms] = useState([]);
   const [user, setUser] = useState(null);
   let history = useHistory();
-  
 
-  const RenderRoom = () => {
-    const request = new Request("http://localhost:8080/api/rooms/"); 
-    let {id} = useParams();
-    request.getById(Number(id)).then((r) => setRoom(r)).then((fetchedRoom) => {
-      return fetchedRoom ? <Room room={room}/> : <Room/>;
-    });
-    console.log(room);
-}
+  let url = "http://localhost:8080/api/";
+
+  const RenderRoom = (props) => {
+    let foundRoom;
+    const request = new Request("http://localhost:8080/api/rooms");
+    const id = props.match.params.id;
+    request.getById(Number(id)).then((room) => setRoom(room));
+    return <Room foundRoom={room} />;
+  };
 
   useEffect(() => {
-    const request = new Request("http://localhost:8080/api/users/");
+    const requestUsers = new Request(url + "users/");
     const userId = window.sessionStorage.getItem("userId");
-    request.getById(Number(userId)).then((user) => setUser(user));
+    requestUsers.getById(Number(userId)).then((user) => setUser(user));
+    const requestRooms = new Request(url + "rooms");
+    requestRooms.get().then((rooms) => setRooms(rooms));
   }, []);
 
   if (user) {
@@ -49,9 +52,18 @@ const MainContainer = () => {
               path="/"
               render={() => <UserContainer user={user} />}
             />
-            <Route path={'/rooms/:id'} >
-              <RenderRoom/>
-            </Route>
+            <Route
+              exact
+              path={"/rooms/:id"}
+              render={(props) => {
+                const id = props.match.params.id;
+                const foundRoom = rooms.find((room) => {
+                  return Number(room.id) == Number(id);
+                });
+
+                return <Room foundRoom={foundRoom} />;
+              }}
+            />
           </Switch>
         </Router>
       </>

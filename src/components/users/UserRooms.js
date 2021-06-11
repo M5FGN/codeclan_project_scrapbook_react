@@ -1,28 +1,27 @@
-import React from 'react';
-import { Router, Switch, useParams } from 'react-router';
-import Room from '../rooms/Room.js';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  useParams,
+  Link,
+} from "react-router-dom";
+import Room from "../rooms/Room.js";
 
+const UserRooms = ({ user }) => {
+  const userRoomList = user.rooms;
 
-
-
-const UserRooms = ({user}) => {
-
-    const userRoomList = user.rooms;
-
-    const userRoomsNodes = userRoomList.map((room, index) => {
-        return (<li key={index}><a href={`/rooms/${room.id}`}>{room.roomName}</a></li>)
-    })
-
-
-
+  const userRoomsNodes = userRoomList.map((room, index) => {
     return (
-        <div>
+      <li key={index}>
+        <Link to={`/rooms/${room.id}`}>{room.roomName}</Link>
+      </li>
+    );
+  });
 
-        <ul>{userRoomsNodes}</ul>       
-        
-        </div>
-
-    )
-
-}
+  return (
+    <div>
+      <ul>{userRoomsNodes}</ul>
+    </div>
+  );
+};
 export default UserRooms;

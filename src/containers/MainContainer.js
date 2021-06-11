@@ -3,6 +3,7 @@ import UserContainer from "./UserContainer";
 import UserForm from "../components/UserForm";
 import SignUp from "../components/SignUp";
 import RoomContainer from "./RoomContainer";
+import NavBar from "../components/NavBar";
 import Request from "../helpers/request";
 import {
   BrowserRouter as Router,
@@ -43,6 +44,7 @@ const MainContainer = () => {
     return (
       <>
         <Router>
+          <NavBar />
           <Switch>
             <Route path="/login">
               <Redirect to="/" />

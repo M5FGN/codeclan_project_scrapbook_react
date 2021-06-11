@@ -1,18 +1,22 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const UserForm = ({ setUser }) => {
+  let history = useHistory();
+
   const handleLogIn = function (event) {
     event.preventDefault();
     const name = event.target.name.value;
     const password = event.target.password.value;
     console.log(name, password);
 
-    const user = fetch(
+    fetch(
       `http://localhost:8080/api/users/login?name=${name}&password=${password}`
     )
       .then((res) => res.json())
       .then((user) => {
         setUser(user);
+        history.push("/");
       });
   };
 
@@ -34,6 +38,9 @@ const UserForm = ({ setUser }) => {
         ></input>
         <input type="submit" value="Login"></input>
       </form>
+      <h3>
+        <a href="/signup">Don't have an account?</a>
+      </h3>
     </div>
   );
 };

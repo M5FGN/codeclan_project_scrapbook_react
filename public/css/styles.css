@@ -6,8 +6,16 @@ body {
     background-size: stretch;
 }
 
-h1, h2, p, .button {
+h1, h2, p, .button, form > label {
     font-family: 'El Messiri', sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    margin: 50px 0px;
 }
 
 .nav {
@@ -37,7 +45,6 @@ h1, h2, p, .button {
 }
 
 
-
 .button {
     padding: 10px;
     background-color: #E8E5FF;
@@ -45,6 +52,7 @@ h1, h2, p, .button {
     border: none;
     font-size: 16px;
     text-transform: uppercase;
+    margin: 10px;
 }
 
 .footer { 
@@ -80,3 +88,24 @@ h1, h2, p, .button {
 .gallery { 
     margin: 20px;
 }
+
+form > label {
+    font-size: 18px;
+    width: 50%;
+    margin: 20px;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 5px;
+    margin: 10px;
+}
+
+.formbox { 
+    width: 60%;
+    margin: auto;
+}
+
+
+
+

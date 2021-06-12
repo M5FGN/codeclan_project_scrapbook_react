@@ -29,21 +29,25 @@ const UserForm = ({ setUser }) => {
 
       <Logo />
 
-      <div className="card">
+      <div className="card formbox">
         <h2>Log In to ScrapBook ...</h2>
-      <form className="form" onSubmit={handleLogIn}>
-        <label>Username ... </label>
+      <form onSubmit={handleLogIn}>
+        <label>Username:</label>
+        <br></br>
         <input
           type="text"
           placeholder="Enter User Name ..."
           name="name"
         ></input>
-        <label>Password ...</label>
+        <br></br>
+        <label>Password:</label>
+        <br></br>
         <input
           type="text"
           placeholder="Enter Password ..."
           name="password"
         ></input>
+        <br></br>
         <input className="button" type="submit" value="Log In ..."></input>
       </form>
       <h3>

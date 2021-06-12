@@ -34,17 +34,25 @@ const SignUp = () => {
     <div>
       <Logo />
 
-    <div className="card">
+    <div className="card formbox">
       <h2>Sign Up to ScrapBook ...</h2>
       <form className="form" onSubmit={handleSignUp}>
-        <label htmlFor="">Name</label>
+        <label htmlFor="">Name:</label>
+        <br></br>
         <input type="text" name="name" />
-        <label htmlFor="">Date Of Birth</label>
+        <br></br>
+        <label htmlFor="">Date Of Birth:</label>
+        <br></br>
         <input type="text" name="DOB" />
-        <label htmlFor="">Password</label>
+        <br></br>
+        <label htmlFor="">Password:</label>
+        <br></br>
         <input type="text" name="password" />
-        <label htmlFor="">Confirm Password</label>
+        <br></br>
+        <label htmlFor="">Confirm Password:</label>
+        <br></br>
         <input type="text" name="confirmPassword" />
+        <br></br>
         <input className="button" type="submit" value="Sign Up..." />
       </form>
       <p>{errorMessage}</p>

@@ -1,6 +1,8 @@
 import React from "react";
 import Request from "../helpers/request";
 import { useHistory } from "react-router-dom";
+import Logo from "./Logo"
+import Footer from "../components/Footer";
 
 const SignUp = () => {
   const request = new Request("http://localhost:8080/api/users");
@@ -28,21 +30,36 @@ const SignUp = () => {
     }
   };
   return (
-    <>
-      <h2>Sign up</h2>
-      <form onSubmit={handleSignUp}>
-        <label htmlFor="">Name</label>
+
+    <div>
+    
+      <Logo />
+
+    <div className="card formbox">
+      <h2>Sign Up to ScrapBook ...</h2>
+      <form className="form" onSubmit={handleSignUp}>
+        <label htmlFor="">Name:</label>
+        <br></br>
         <input type="text" name="name" />
-        <label htmlFor="">Date Of Birth</label>
+        <br></br>
+        <label htmlFor="">Date Of Birth:</label>
+        <br></br>
         <input type="text" name="DOB" />
-        <label htmlFor="">Password</label>
+        <br></br>
+        <label htmlFor="">Password:</label>
+        <br></br>
         <input type="text" name="password" />
-        <label htmlFor="">Confirm Password</label>
+        <br></br>
+        <label htmlFor="">Confirm Password:</label>
+        <br></br>
         <input type="text" name="confirmPassword" />
-        <input type="submit" value="Sign Up" />
+        <br></br>
+        <input className="button" type="submit" value="Sign Up..." />
       </form>
       <p>{errorMessage}</p>
-    </>
+    </div>
+    <Footer />
+    </div>
   );
 };
 

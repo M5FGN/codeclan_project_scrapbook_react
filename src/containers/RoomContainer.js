@@ -10,7 +10,6 @@ const RoomContainer = ({room}) => {
     }
     return (
     <div>
-    <h1>Room Container</h1>
     <RoomDetail room={room} />
     </div>
 )

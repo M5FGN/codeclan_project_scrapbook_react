@@ -1,0 +1,129 @@
+body {
+    background-image: url(../images/background.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: stretch;
+}
+
+h1, h2, p, .button, form > label {
+    font-family: 'El Messiri', sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    margin: 50px 0px;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+  }
+  
+  .logo { grid-area: 1 / 1 / 2 / 3; }
+  .links { grid-area: 1 / 2 / 2 / 3; }
+  
+.links { 
+    text-align: right;
+}
+
+  .links > ul > li {
+      font-size:20px;
+      display: inline-block;
+      padding: 30px 30px 0 0;
+  }
+
+.logo {
+    padding: 10px;
+    width: 250px;
+}
+
+.card {
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 10px;
+    opacity: 70%;
+    box-shadow: 5px 3px 22px 1px #bba7f2;
+}
+
+
+.button {
+    padding: 10px;
+    background-color: #E8E5FF;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+.footer { 
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+
+.top {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "detail feature";
+  }
+  
+  .detail { grid-area: detail; }
+  
+  .feature { grid-area: feature; }
+  
+  .detailsbox { 
+    margin: 20px;
+}
+
+.featurebox { 
+    margin: 20px 20px 0 0;
+}
+
+.gallery { 
+    margin: 20px;
+}
+
+form > label {
+    font-size: 18px;
+    width: 50%;
+    margin: 20px;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 5px;
+    margin: 10px;
+}
+
+.formbox { 
+    width: 60%;
+    margin: auto;
+}
+
+.buttonbox { 
+    margin-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+

@@ -32,6 +32,7 @@ const SignUp = () => {
   return (
 
     <div>
+    
       <Logo />
 
     <div className="card formbox">

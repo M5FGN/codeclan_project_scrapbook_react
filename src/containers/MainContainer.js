@@ -61,8 +61,12 @@ const MainContainer = () => {
                 const foundRoom = user.rooms.find((room) => {
                   return Number(room.id) == Number(id);
                 });
-
-                return <Room foundRoom={foundRoom} />;
+                const finalRoom = rooms.find(room=> {
+                  return room.id == foundRoom.id;
+                })
+                
+                return <Room foundRoom={finalRoom} />;
+            
               }}
             />
           </Switch>

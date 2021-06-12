@@ -1,18 +1,10 @@
 import React, { useState } from "react";
-import Room from "../components/rooms/Room";
+import Room from "../components/Room";
 import RoomDetail from "../components/rooms/RoomDetail";
 
 const RoomContainer = ({ rooms }) => {
   const [search, setSearch] = useState("");
   let roomList;
-
-  roomList = rooms.map((room, index) => {
-    return (
-      <li key={index}>
-        <RoomDetail room={room} />
-      </li>
-    );
-  });
 
   const handleInput = (e) => {
     setSearch(e.target.value.toLowerCase());
@@ -25,17 +17,24 @@ const RoomContainer = ({ rooms }) => {
     });
 
     roomList = reducedList.map((room, index) => {
-      return (
-        <li key={index}>
-          <RoomDetail room={room} />
-        </li>
-      );
+      if (room) {
+        return (
+          <li key={index}>
+            <RoomDetail room={room} />
+          </li>
+        );
+      }
     });
   }
 
   return (
     <>
-      <input type="text" onChange={handleInput} value={search} />
+      <input
+        type="text"
+        onChange={handleInput}
+        value={search}
+        placeholder="Search for a room"
+      />
       <div className="rooms-container">
         <ul>{roomList ? roomList : null}</ul>
       </div>

@@ -13,7 +13,7 @@ import {
   useHistory,
   Redirect,
 } from "react-router-dom";
-import Room from "../components/rooms/Room";
+import Room from "../components/Room";
 import { findAllByAltText } from "@testing-library/dom";
 
 const MainContainer = () => {
@@ -69,7 +69,7 @@ const MainContainer = () => {
                   return Number(room.id) == Number(id);
                 });
 
-                return <Room foundRoom={foundRoom} />;
+                return <Room foundRoom={foundRoom} user={user} />;
               }}
             />
           </Switch>

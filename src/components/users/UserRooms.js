@@ -5,7 +5,7 @@ import {
   useParams,
   Link,
 } from "react-router-dom";
-import Room from "../rooms/Room.js";
+import Room from "../Room.js";
 
 const UserRooms = ({ user }) => {
   const userRoomList = user.rooms;

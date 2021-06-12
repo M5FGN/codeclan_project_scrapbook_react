@@ -1,13 +1,13 @@
 import React from 'react';
 import RoomButtons from './RoomButtons'
 
-const RoomDetail = () => {
+const RoomDetail = ({foundRoom}) => {
 
     return (
 
         <div className="card detailsbox">
-            <h1>Room Name</h1>
-            <p>Room Bio</p>
+            <h2>{foundRoom.roomName}</h2>
+            <p>{foundRoom.bio}</p>
             <p>Members</p>
             <RoomButtons />
         </div>

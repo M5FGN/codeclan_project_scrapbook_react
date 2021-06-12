@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import UserRooms from "../users/UserRooms";
+import UserButtons from "./UserButtons";
 
 const UserDetail = ({ user }) => {
   return (
@@ -8,6 +9,7 @@ const UserDetail = ({ user }) => {
       <p> Profile Pic</p>
       <p>{user.dateOfBirth}</p>
       <p>{user.bio}</p>
+      <UserButtons />
     </div>
   );
 };

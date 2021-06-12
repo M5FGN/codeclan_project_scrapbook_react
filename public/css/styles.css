@@ -33,13 +33,10 @@ h1, h2, p, .button {
     background-color: white;
     border-radius: 10px;
     opacity: 70%;
-    margin: 0 100px;
     box-shadow: 5px 3px 22px 1px #bba7f2;
 }
 
-.detailsbox { 
-    width: 30%;
-}
+
 
 .button {
     padding: 10px;
@@ -57,5 +54,29 @@ h1, h2, p, .button {
 }
 
 
+.top {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "detail feature";
+  }
+  
+  .detail { grid-area: detail; }
+  
+  .feature { grid-area: feature; }
+  
+  .detailsbox { 
+    margin: 20px;
+}
 
+.featurebox { 
+    margin: 20px 20px 0 0;
+}
 
+.gallery { 
+    margin: 20px;
+}

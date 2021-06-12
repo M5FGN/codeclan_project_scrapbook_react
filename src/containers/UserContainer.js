@@ -4,6 +4,7 @@ import UserDetail from "../components/users/UserDetail";
 import UserRooms from "../components/users/UserRooms";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import Slider from "../components/Slider";
 
 const UserContainer = ({ user }) => {
   const [rooms, setRooms] = useState([]);
@@ -17,9 +18,15 @@ const UserContainer = ({ user }) => {
   return (
     <div>
       <NavBar />
-
-      <UserDetail user={user} />
+      <div class="top">
+<div className="detail"><UserDetail user={user} /></div>
+<div className="feature"><Slider /></div>
+</div>
+      
+      <div className="card gallery">
       <UserRooms user={user} />
+      </div>
+
       <Footer />
     </div>
   );

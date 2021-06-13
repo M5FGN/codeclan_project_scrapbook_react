@@ -14,7 +14,7 @@ const Room = ({ foundRoom }) => {
 <div className="detail"><RoomDetail foundRoom={foundRoom} /></div>
 <div className="feature"><Chat /></div>
 </div>
-      <RoomPosts />
+      <RoomPosts posts={foundRoom.posts}/>
       <Footer />
     </div>
   );

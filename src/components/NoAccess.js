@@ -16,9 +16,9 @@ const NoAccess = ({ user, roomToJoin }) => {
 
     if (password === roomToJoin.password) {
       const request = new Request(url + roomToJoin.id);
+
       roomCopy.users.push(user);
-      console.log(roomCopy);
-      request.patch(roomCopy);
+      request.patch(user);
       history.push("/");
     } else {
       error = "Wrong password";

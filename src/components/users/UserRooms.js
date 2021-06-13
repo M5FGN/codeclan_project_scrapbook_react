@@ -13,13 +13,17 @@ const UserRooms = ({ user }) => {
   const userRoomsNodes = userRoomList.map((room, index) => {
     return (
       <li key={index}>
-        <Link to={`/rooms/${room.id}`}>{room.roomName}</Link>
+        <Link to={`/rooms/${room.id}`}>
+          <div className="card galleryitem"><h3>{room.roomName}</h3>
+          <p>{room.bio}</p>
+          </div>
+          </Link>
       </li>
     );
   });
 
   return (
-    <div>
+    <div className="card gallery">
       <ul>{userRoomsNodes}</ul>
     </div>
   );

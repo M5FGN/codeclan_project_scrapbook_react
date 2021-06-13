@@ -10,8 +10,8 @@ const Room = ({ foundRoom }) => {
     <div>
       <NavBar />
       <h1>{foundRoom ? foundRoom.roomName : null}</h1>
-      <div class="top">
-<div className="detail"><RoomDetail /></div>
+      <div className="top">
+<div className="detail"><RoomDetail foundRoom={foundRoom} /></div>
 <div className="feature"><Chat /></div>
 </div>
       <RoomPosts />

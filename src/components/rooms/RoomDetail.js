@@ -1,14 +1,15 @@
 import React from 'react';
 import RoomButtons from './RoomButtons'
+import RoomUsers from './RoomUsers'
 
-const RoomDetail = () => {
+const RoomDetail = ({foundRoom}) => {
 
     return (
 
         <div className="card detailsbox">
-            <h1>Room Name</h1>
-            <p>Room Bio</p>
-            <p>Members</p>
+            <h2>{foundRoom.roomName}</h2>
+            <p>{foundRoom.bio}</p>
+            <RoomUsers foundRoom={foundRoom} />
             <RoomButtons />
         </div>
     )

@@ -15,6 +15,7 @@ import {
 } from "react-router-dom";
 import Room from "../components/Room";
 import { findAllByAltText } from "@testing-library/dom";
+import { logDOM } from "@testing-library/dom";
 
 const MainContainer = () => {
   const [room, setRoom] = useState(null);
@@ -68,8 +69,17 @@ const MainContainer = () => {
                 const foundRoom = user.rooms.find((room) => {
                   return Number(room.id) == Number(id);
                 });
+                const roomToJoin = rooms.find((room) => {
+                  return Number(room.id) == Number(id);
+                });
 
-                return <Room foundRoom={foundRoom} user={user} />;
+                return (
+                  <Room
+                    foundRoom={foundRoom}
+                    user={user}
+                    roomToJoin={roomToJoin}
+                  />
+                );
               }}
             />
           </Switch>

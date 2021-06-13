@@ -3,9 +3,9 @@ import RoomDetail from "./rooms/RoomDetail";
 import Request from "../helpers/request";
 import NoAccess from "../components/NoAccess";
 
-const Room = ({ foundRoom, user }) => {
+const Room = ({ foundRoom, user, roomToJoin }) => {
   if (!foundRoom) {
-    return <NoAccess user={user} room={foundRoom} />;
+    return <NoAccess user={user} roomToJoin={roomToJoin} />;
   }
   return (
     <div>

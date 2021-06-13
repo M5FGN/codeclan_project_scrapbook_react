@@ -12,7 +12,6 @@ const RoomContainer = ({ rooms }) => {
 
   if (search) {
     let reducedList = rooms.filter((room) => {
-      console.log(room.roomName.slice(0, search.length).toLowerCase(), search);
       return room.roomName.slice(0, search.length).toLowerCase() == search;
     });
 

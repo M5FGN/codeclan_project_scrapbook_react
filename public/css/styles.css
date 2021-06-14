@@ -6,7 +6,7 @@ body {
     background-size: stretch;
 }
 
-h1, h2, p, .button, form > label {
+h1, h2, p, .button, form > label, .links {
     font-family: 'El Messiri', sans-serif;
 }
 
@@ -103,6 +103,12 @@ h2 {
     flex-wrap: wrap;
     margin: 0 10px;
 
+}
+
+.gallery > ul > li {
+  font-size:20px;
+  display: inline-block;
+  padding: 30px 30px 0 0;
 }
 
 .twenty { 
@@ -224,11 +230,7 @@ article.nextSlide {
   transform: translateX(100%);
 }
 
-.gallery > ul > li {
-    font-size:20px;
-    display: inline-block;
-    padding: 30px 30px 0 0;
-}
+
 
 .roomusersitems { 
     display: inline-block;
@@ -239,5 +241,21 @@ article.nextSlide {
     padding-inline-start: 0px;
 }
 
+.post {
+  width: 330px;
+  display: inline-block;
+  margin: 30px;
+  padding: 0px;
+}
+
+.postitem {
+    list-style-type: none;
+    margin-inline-start: 0;
+    padding: 0;
+}
+
+.poststitle {
+  margin: 30px;
+}
 
 

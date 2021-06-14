@@ -1,27 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router";
 import Request from "../helpers/request";
 
 const NoAccess = ({ user, roomToJoin }) => {
   let history = useHistory();
+  const [error, setError] = useState(false);
   const url = `/api/rooms/`;
-  let error = "";
+
   const handlePasswordToJoin = (event) => {
     event.preventDefault();
     const password = event.target.password.value;
 
-    const roomCopy = {
-      ...roomToJoin,
-    };
-
     if (password === roomToJoin.password) {
       const request = new Request(url + roomToJoin.id);
-
-      roomCopy.users.push(user);
-      request.patch(user);
+      request.put(user);
       history.push("/");
     } else {
-      error = "Wrong password";
+      setError(!error);
     }
   };
   return (
@@ -34,7 +29,7 @@ const NoAccess = ({ user, roomToJoin }) => {
         <input type="text" name="password" />
         <input type="submit" />
       </form>
-      <h3>{error}</h3>
+      <h3>{error ? "Wrong Password" : null}</h3>
     </div>
   );
 };

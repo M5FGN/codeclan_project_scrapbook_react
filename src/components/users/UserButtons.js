@@ -5,8 +5,7 @@ const UserButtons = (
 ) => {
 return (
     <div className="buttonbox">
-        <a className="button" href="">Add Room</a>
-        <a className="button" href="">Join Room</a>
+        <a className="button" href="">Update Profile</a>
     </div>
 )
 

@@ -53,6 +53,7 @@ h2 {
     border-radius: 10px;
     opacity: 70%;
     box-shadow: 5px 3px 22px 1px silver;
+    justify-content: center;
 }
 
 
@@ -255,6 +256,10 @@ article.nextSlide {
 }
 
 .poststitle {
+  margin: 30px;
+}
+
+.myrooms {
   margin: 30px;
 }
 

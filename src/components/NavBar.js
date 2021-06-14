@@ -17,6 +17,9 @@ const NavBar = () => {
       <div className="links">
         <ul>
           <li>
+            Add New Room
+          </li>
+          <li>
             {" "}
             <Link to="/">My Profile</Link>
           </li>

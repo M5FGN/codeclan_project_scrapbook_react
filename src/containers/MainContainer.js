@@ -5,6 +5,7 @@ import SignUp from "../components/SignUp";
 import RoomContainer from "./RoomContainer";
 import NavBar from "../components/NavBar";
 import Request from "../helpers/request";
+import CreateRoom from "../components/CreateRoom";
 import {
   BrowserRouter as Router,
   Switch,
@@ -65,6 +66,10 @@ const MainContainer = () => {
               render={() => {
                 return <RoomContainer rooms={rooms} />;
               }}
+            />
+            <Route
+              path="/rooms/new"
+              render={() => <CreateRoom user={user} />}
             />
             <Route
               path={"/rooms/:id"}

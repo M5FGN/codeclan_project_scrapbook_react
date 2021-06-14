@@ -14,6 +14,8 @@ const RoomButtons = ({ room, fetchUser, setUser }) => {
     setUser(user);
     window.location.reload(false);
   };
+
+  const handleAddRoom = () => {};
   return (
     <div className="buttonbox">
       <a className="button" href="">

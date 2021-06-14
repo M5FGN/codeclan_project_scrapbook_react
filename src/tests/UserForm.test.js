@@ -30,12 +30,12 @@ describe("UserForm", () => {
           <UserForm setUser={stubbedUser} />
         );
         getByTestId("user-name").value = "Ahmet";
-        getByTestId("user-name").value = "metallica";
+        getByTestId("password").value = "metallica";
 
         getByTestId("log-in").onsubmit;
 
         let container = render(<UserDetail user={stubbedUser} />);
-        expect(container.findByText("Ahmet"));
+        expect(container.getByTestId('name')).toHaveTextContent("Ahmet");
     
       });
     })

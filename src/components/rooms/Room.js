@@ -11,9 +11,9 @@ const Room = ({ foundRoom }) => {
       <NavBar />
       <h1>{foundRoom ? foundRoom.roomName : null}</h1>
       <div className="top">
-<div className="detail"><RoomDetail foundRoom={foundRoom} /></div>
-<div className="feature"><Chat /></div>
-</div>
+      <div className="detail"><RoomDetail foundRoom={foundRoom} /></div>
+      <div className="feature"><Chat /></div>
+      </div>
       <RoomPosts posts={foundRoom.posts}/>
       <Footer />
     </div>

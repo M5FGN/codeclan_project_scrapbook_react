@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Room from "../components/Room";
 import RoomDetail from "../components/rooms/RoomDetail";
 
 const RoomContainer = ({ rooms }) => {

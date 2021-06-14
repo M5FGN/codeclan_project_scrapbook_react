@@ -13,7 +13,7 @@ import {
   useHistory,
   Redirect,
 } from "react-router-dom";
-import Room from "../components/Room";
+import Room from "../components/rooms/Room";
 import { findAllByAltText } from "@testing-library/dom";
 import { logDOM } from "@testing-library/dom";
 

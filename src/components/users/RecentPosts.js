@@ -1,11 +1,11 @@
 const RecentPosts = [
-  {
-    id: 1,
-    roomName: "Cats",
-    img_link:
-      'src/images/cat1.jpg',
-      caption: 'Test Caption ID 1'
-  },
+  // {
+  //   id: 1,
+  //   roomName: "Cats",
+  //   img_link:
+  //     'src/images/cat1.jpg',
+  //     caption: 'Test Caption ID 1'
+  // },
   {
     id: 2,
     roomName: "Cats",

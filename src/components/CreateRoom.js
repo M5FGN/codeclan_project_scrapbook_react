@@ -1,7 +1,11 @@
 import React from "react";
+import { useHistory } from "react-router";
 import RoomService from "../helpers/RoomService";
+import UserService from "../helpers/UserService";
 
 const CreateRoom = ({ user }) => {
+  let history = useHistory();
+
   const handleCreateRoom = (event) => {
     event.preventDefault();
     const roomName = event.target.title.value;
@@ -15,7 +19,13 @@ const CreateRoom = ({ user }) => {
       admin: admin,
     };
     const roomService = new RoomService();
-    roomService.post(newRoom);
+    const userService = new UserService();
+    roomService
+      .post(newRoom)
+      .then(() => roomService.getByRoomNameAndAdmin(roomName, admin))
+      .then((room) => userService.addRoomToUser(room, user.id));
+
+    history.push("/");
   };
   return (
     <div className="room-form">

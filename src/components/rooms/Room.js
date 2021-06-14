@@ -29,6 +29,7 @@ const Room = ({ foundRoom, roomToJoin, user, fetchUser, setUser }) => {
               foundRoom={foundRoom}
               fetchUser={fetchUser}
               setUser={setUser}
+              user={user}
             />
           ) : null}
         </div>

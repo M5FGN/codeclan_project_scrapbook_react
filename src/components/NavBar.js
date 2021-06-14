@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../components/Logo";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const NavBar = () => {
   let history = useHistory();

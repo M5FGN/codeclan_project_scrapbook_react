@@ -45,7 +45,6 @@ const MainContainer = () => {
     return (
       <>
         <Router>
-          <NavBar />
           <Switch>
             <Route path="/login">
               <Redirect to="/" />

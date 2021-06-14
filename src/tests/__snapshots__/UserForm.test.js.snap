@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <img
+      alt=""
+      class="logo"
+      src="logo.jpg"
+    />
+    <div
+      class="card formbox"
+    >
+      <h2>
+        Log In to ScrapBook ...
+      </h2>
+      <form
+        data-testid="logged-in"
+      >
+        <label>
+          Username:
+        </label>
+        <br />
+        <input
+          data-testid="user-name"
+          id="name"
+          placeholder="Enter User Name ..."
+          type="text"
+        />
+        <br />
+        <label>
+          Password:
+        </label>
+        <br />
+        <input
+          data-testid="password"
+          id="password"
+          placeholder="Enter Password ..."
+          type="text"
+        />
+        <br />
+        <input
+          class="button"
+          data-testid="log-in"
+          type="submit"
+          value="Log In ..."
+        />
+      </form>
+      <h3>
+        <a
+          href="/signup"
+        >
+          Don't have an account?
+        </a>
+      </h3>
+    </div>
+    <div>
+      <p
+        class="center"
+      >
+        Copyright © 2021 - Ahmet, Liam, Mary, Pooja
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

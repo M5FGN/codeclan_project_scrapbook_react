@@ -8,8 +8,8 @@ const RoomPosts = ({posts}) => {
     })
 
     return (
-        <div className="card gallery twenty">
-            <h2>Post Gallery goes here!!!</h2>
+        <div className="card twenty">
+            <h2 className="poststitle">Room Posts</h2>
             {postComp}
         </div>
     )

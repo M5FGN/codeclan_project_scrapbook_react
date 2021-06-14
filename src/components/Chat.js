@@ -39,7 +39,7 @@ const Chat = ({foundRoom, user}) => {
     };
   
     const fetchAllMessages = () => {
-      request.getAll().then((messages) => setMessages(messages));
+      request.getMessagesByRoomId(Number(foundRoom.id)).then((messages) => setMessages(messages));
     };
   
     const sendMessage = (event) => {
@@ -87,7 +87,7 @@ const Chat = ({foundRoom, user}) => {
   
     useEffect(() => {
       connect();
-      fetchAllMessages();
+      setTimeout(fetchAllMessages(), 1000)
     }, []);
   
     let messageList = [];

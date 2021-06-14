@@ -1,10 +1,10 @@
 class ChatService {
     constructor() {
-      this.baseUrl = "http://localhost:8080/api/messages";
+      this.baseUrl = "http://localhost:8080/api/messages/";
     }
   
-    getAll = () => {
-      return fetch(this.baseUrl).then((res) => res.json());
+    getMessagesByRoomId = (id) => {
+      return fetch(this.baseUrl + id).then((res) => res.json());
     };
   
     post = (payload) => {

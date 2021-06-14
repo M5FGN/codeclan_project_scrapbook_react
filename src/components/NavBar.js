@@ -1,8 +1,9 @@
 import React from "react";
 import Logo from "../components/Logo";
 import { Link, useHistory } from "react-router-dom";
+import RoomContainer from "../containers/RoomContainer";
 
-const NavBar = () => {
+const NavBar = ({ user, rooms }) => {
   let history = useHistory();
   const handleLogOut = () => {
     window.sessionStorage.clear();
@@ -14,6 +15,7 @@ const NavBar = () => {
       <div className="logo">
         <Logo />
       </div>
+      <RoomContainer rooms={rooms} user={user} />
       <div className="links">
         <ul>
           <li>

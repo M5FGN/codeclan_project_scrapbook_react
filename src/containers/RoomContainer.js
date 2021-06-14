@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import RoomDetail from "../components/rooms/RoomDetail";
+import RoomListItem from "../components/RoomListItem";
 
-const RoomContainer = ({ rooms }) => {
+const RoomContainer = ({ user, rooms }) => {
   const [search, setSearch] = useState("");
   let roomList;
+
+  const styles = {
+    backgroundColor: "rgba(0,0,0,0.0)",
+    transition: "background-color 1s",
+  };
 
   const handleInput = (e) => {
     setSearch(e.target.value.toLowerCase());
@@ -18,23 +24,30 @@ const RoomContainer = ({ rooms }) => {
       if (room) {
         return (
           <li key={index}>
-            <RoomDetail room={room} />
+            <RoomListItem foundRoom={room} user={user} />
           </li>
         );
       }
     });
+    styles.height = "100%";
+    styles.backgroundColor = "rgba(0,0,0,0.3)";
   }
 
   return (
     <>
-      <input
-        type="text"
-        onChange={handleInput}
-        value={search}
-        placeholder="Search for a room"
-      />
-      <div className="rooms-container">
-        <ul>{roomList ? roomList : null}</ul>
+      <div className="search-bar-container" style={styles}>
+        <div className="search-bar-element">
+          <input
+            className="search-bar"
+            type="text"
+            onChange={handleInput}
+            value={search}
+            placeholder="Search for a room"
+          />
+        </div>
+        <div className="rooms-container">
+          <ul>{roomList ? roomList : null}</ul>
+        </div>
       </div>
     </>
   );

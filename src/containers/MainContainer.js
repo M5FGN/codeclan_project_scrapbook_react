@@ -73,9 +73,13 @@ const MainContainer = () => {
                   return Number(room.id) == Number(id);
                 });
 
+                const finalRoom = rooms.find((room) => {
+                  return room.id == foundRoom.id;
+                });
+
                 return (
                   <Room
-                    foundRoom={foundRoom}
+                    foundRoom={finalRoom}
                     user={user}
                     roomToJoin={roomToJoin}
                   />

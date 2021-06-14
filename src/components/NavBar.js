@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import Logo from "../components/Logo";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   let history = useHistory();
@@ -9,14 +10,15 @@ const NavBar = () => {
   };
 
   return (
-    <header>
-      <nav>
+    <div className="nav">
+      <div className="logo">
+        <Logo />
+      </div>
+      <div className="links">
         <ul>
           <li>
+            {" "}
             <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/rooms">Find a Room</Link>
           </li>
           <li>
             <Link to="/login" onClick={handleLogOut}>
@@ -24,9 +26,8 @@ const NavBar = () => {
             </Link>
           </li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </div>
   );
 };
-
 export default NavBar;

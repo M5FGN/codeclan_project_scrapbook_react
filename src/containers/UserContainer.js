@@ -20,12 +20,16 @@ const UserContainer = ({ user }) => {
       <NavBar />
       <h1>{user.name}</h1>
       <div className="top">
-<div className="detail"><UserDetail user={user} /></div>
-<div className="feature"><Slider /></div>
-</div>
-      
+        <div className="detail">
+          <UserDetail user={user} />
+        </div>
+        <div className="feature">
+          <Slider />
+        </div>
+      </div>
+
       <div className="gallery">
-      <UserRooms user={user} />
+        <UserRooms user={user} />
       </div>
 
       <Footer />

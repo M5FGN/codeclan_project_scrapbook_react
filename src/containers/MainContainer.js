@@ -3,6 +3,7 @@ import UserContainer from "./UserContainer";
 import UserForm from "../components/UserForm";
 import SignUp from "../components/SignUp";
 import RoomContainer from "./RoomContainer";
+import NavBar from "../components/NavBar";
 import Request from "../helpers/request";
 import {
   BrowserRouter as Router,
@@ -12,9 +13,9 @@ import {
   useHistory,
   Redirect,
 } from "react-router-dom";
-import Room from "../components/rooms/Room";
+import Room from "../components/Room";
 import { findAllByAltText } from "@testing-library/dom";
-
+import { logDOM } from "@testing-library/dom";
 
 const MainContainer = () => {
   const [room, setRoom] = useState(null);
@@ -55,18 +56,33 @@ const MainContainer = () => {
             />
             <Route
               exact
+              path="/rooms"
+              render={() => {
+                return <RoomContainer rooms={rooms} />;
+              }}
+            />
+            <Route
               path={"/rooms/:id"}
               render={(props) => {
                 const id = props.match.params.id;
                 const foundRoom = user.rooms.find((room) => {
                   return Number(room.id) == Number(id);
                 });
-                const finalRoom = rooms.find(room=> {
+                const roomToJoin = rooms.find((room) => {
+                  return Number(room.id) == Number(id);
+                });
+
+                const finalRoom = rooms.find((room) => {
                   return room.id == foundRoom.id;
-                })
-                
-                return <Room foundRoom={finalRoom} />;
-            
+                });
+
+                return (
+                  <Room
+                    foundRoom={finalRoom}
+                    user={user}
+                    roomToJoin={roomToJoin}
+                  />
+                );
               }}
             />
           </Switch>

@@ -52,7 +52,7 @@ const MainContainer = () => {
             <Route
               exact
               path="/"
-              render={() => <UserContainer user={user} />}
+              render={() => <UserContainer user={user} setUser={setUser} />}
             />
             <Route
               exact

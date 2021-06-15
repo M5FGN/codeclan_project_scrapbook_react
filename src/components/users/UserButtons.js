@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import UserUpdate from './UserUpdate';
+
+const UserButtons=({user, setUser}) => {
+
+  const [modal, setModal] = useState(false);
+    
+
+    const togglePop = () => {
+     setModal(!modal);
+    };
 
 
-const UserButtons = (
-) => {
-return (
-    <div className="buttonbox">
-        <a className="button" href="">Update Profile</a>
-    </div>
-)
 
-}
-export default UserButtons;
+  
+    return (
+     <div>
+      <div onClick={togglePop}>
+        <button>Update Details</button>
+      </div>
+      {modal ? <UserUpdate user={user} setUser={setUser} toggle={togglePop} /> : null}
+     </div>
+    );
+   }
+
+
+  export default UserButtons;

@@ -6,8 +6,9 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Slider from "../components/Slider";
 
-const UserContainer = ({ user }) => {
+const UserContainer = ({ user, setUser }) => {
   const [rooms, setRooms] = useState([]);
+  
 
   if (!user) {
     return "Loading...";
@@ -21,7 +22,7 @@ const UserContainer = ({ user }) => {
       <h1>{user.name}</h1>
       <div className="top">
         <div className="detail">
-          <UserDetail user={user} />
+          <UserDetail user={user} setUser={setUser} />
         </div>
         <div className="feature">
           <Slider />
@@ -30,6 +31,7 @@ const UserContainer = ({ user }) => {
 
       <div className="gallery">
         <UserRooms user={user} />
+        
       </div>
 
       <Footer />

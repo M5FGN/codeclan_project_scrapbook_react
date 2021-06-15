@@ -15,7 +15,9 @@ const NavBar = ({ user, rooms }) => {
       <div className="logo">
         <Logo />
       </div>
+      <div className="search">
       <RoomContainer rooms={rooms} user={user} />
+      </div>
       <div className="links">
         <ul>
           <li>

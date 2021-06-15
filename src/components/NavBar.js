@@ -50,6 +50,7 @@ const NavBar = ({ user, rooms }) => {
       </button>
       
     </div>
+    </div>
   );
 };
 export default NavBar;

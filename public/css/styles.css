@@ -228,7 +228,7 @@ h2 {
 }
 
 form > label {
-  font-size: 18px;
+  font-size: 20px;
   width: 50%;
   margin: 20px;
 }
@@ -238,6 +238,17 @@ input[type="text"] {
   padding: 5px;
   margin: 10px;
 }
+
+input[type="file"] {
+  width: 50%;
+  padding: 5px;
+  margin: 10px;
+}
+
+input[type="file" i] {
+  font-size: 20px;
+}
+
 
 .formbox {
   width: 60%;

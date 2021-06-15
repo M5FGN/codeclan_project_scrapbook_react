@@ -28,16 +28,16 @@ const CreateRoom = ({ user }) => {
     history.push("/");
   };
   return (
-    <div className="room-form">
+    <div className="card formbox">
       <h2>Create Room</h2>
       <form action="" onSubmit={handleCreateRoom}>
-        <label htmlFor="">Room Name:</label>
-        <input type="text" name="title" />
-        <label htmlFor="">Room Bio</label>
-        <input type="text" name="bio" />
-        <label htmlFor="">Room Password</label>
-        <input type="text" name="password" />
-        <input type="submit" value="Add Room" />
+        <label htmlFor="">Room Name:</label> <br></br>
+        <input type="text" name="title" /> <br></br>
+        <label htmlFor="">Room Bio</label> <br></br>
+        <input type="text" name="bio" /> <br></br>
+        <label htmlFor="">Room Password</label> <br></br>
+        <input type="text" name="password" /> <br></br>
+        <input className="button" type="submit" value="Add Room" />
       </form>
     </div>
   );

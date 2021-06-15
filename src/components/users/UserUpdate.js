@@ -9,31 +9,38 @@ const UserUpdate = ({ user, setUser, setImgUrl }) => {
     event.preventDefault();
     const request = new Request("http://localhost:8080/api/users/" + user.id);
     const bio = event.target.bio.value;
+
     const updateUser = {
       ...user,
     };
-    updateUser.bio = bio;
 
-    const uploadTask = storage.ref(`profile-pics/${profile.name}`).put(profile);
-    uploadTask.on(
-      "state-changed",
-      (snapshot) => {},
-      (error) => {
-        console.log(error);
-      },
-      () => {
-        storage
-          .ref("profile-pics")
-          .child(profile.name)
-          .getDownloadURL()
-          .then((url) => {
-            updateUser.profilePicture = url;
-            request.put(updateUser);
-            setImgUrl(url);
-          });
-      }
-    );
+    updateUser.bio = bio == "" ? updateUser.bio : bio;
 
+    if (profile) {
+      const uploadTask = storage
+        .ref(`profile-pics/${profile.name}`)
+        .put(profile);
+      uploadTask.on(
+        "state-changed",
+        (snapshot) => {},
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          storage
+            .ref("profile-pics")
+            .child(profile.name)
+            .getDownloadURL()
+            .then((url) => {
+              updateUser.profilePicture = url;
+              request.put(updateUser);
+              setImgUrl(url);
+            });
+        }
+      );
+    } else {
+      request.put(updateUser);
+    }
     // user => setUser(user)
     // window.location.reload(false);
   };

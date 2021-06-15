@@ -3,7 +3,6 @@ import UserUpdate from "./UserUpdate";
 
 const UserButtons = ({ user, setUser, setImgUrl }) => {
   const [modal, setModal] = useState(false);
-
   const togglePop = () => {
     setModal(!modal);
   };
@@ -11,7 +10,7 @@ const UserButtons = ({ user, setUser, setImgUrl }) => {
   return (
     <div>
       <div onClick={togglePop}>
-        <button>Update Details</button>
+        <button className="button">Update Details</button>
       </div>
       {modal ? (
         <UserUpdate

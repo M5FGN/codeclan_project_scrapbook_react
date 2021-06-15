@@ -34,7 +34,7 @@ function Slider({user}) {
     } else {
       setRecentPosts(user.posts)
     }
-    console.log(recentPosts)
+    // console.log(recentPosts)
   },[])
 
   return (

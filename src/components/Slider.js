@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 import RecentPosts from '../components/users/RecentPosts';
 
-function Slider() {
+function Slider({user}) {
   const [recentPosts, setRecentPosts] = useState(RecentPosts);
   const [index, setIndex] = React.useState(0);
 

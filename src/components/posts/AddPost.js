@@ -34,25 +34,28 @@ const AddPost = ({ user, foundRoom }) => {
       },
     };
 
-    const uploadTask = storage.ref(`posts/${profile.name}`).put(profile);
-    uploadTask.on(
-      "state-changed",
-      (snapshot) => {},
-      (error) => {
-        console.log(error);
-      },
-      () => {
-        storage
-          .ref("posts")
-          .child(profile.name)
-          .getDownloadURL()
-          .then((url) => {
-            post.img_link = url;
-            request.post(post);
-          });
-      }
-    );
-
+    if (profile) {
+      const uploadTask = storage.ref(`posts/${profile.name}`).put(profile);
+      uploadTask.on(
+        "state-changed",
+        (snapshot) => {},
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          storage
+            .ref("posts")
+            .child(profile.name)
+            .getDownloadURL()
+            .then((url) => {
+              post.img_link = url;
+              request.post(post);
+            });
+        }
+      );
+    } else {
+      request.post(post);
+    }
     // user => setUser(user)
     // window.location.reload(false);
   };

@@ -6,7 +6,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Slider from "../components/Slider";
 
-const UserContainer = ({ user }) => {
+const UserContainer = ({ user, setUser }) => {
   const [rooms, setRooms] = useState([]);
 
   if (!user) {
@@ -20,7 +20,7 @@ const UserContainer = ({ user }) => {
       <h1>{user.name}</h1>
       <div className="top">
         <div className="detail">
-          <UserDetail user={user} />
+          <UserDetail user={user} setUser={setUser} />
         </div>
         <div className="feature">
           <Slider />

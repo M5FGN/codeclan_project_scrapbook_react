@@ -6,6 +6,7 @@ import RoomContainer from "./RoomContainer";
 import NavBar from "../components/NavBar";
 import Request from "../helpers/request";
 import CreateRoom from "../components/CreateRoom";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -58,7 +59,7 @@ const MainContainer = () => {
             <Route
               exact
               path="/"
-              render={() => <UserContainer user={user} />}
+              render={() => <UserContainer user={user} setUser={setUser} />}
             />
             <Route
               exact

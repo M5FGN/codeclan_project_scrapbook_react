@@ -1,16 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import UserUpdate from "./UserUpdate";
 
-const UserButtons = () => {
-  const searchBarContainer = document.querySelector(".search-bar-container");
-  const addBtn = document.querySelector(".button");
-
-  console.log(addBtn);
+const UserButtons = ({ user, setUser, setImgUrl }) => {
+  const [modal, setModal] = useState(false);
+  const togglePop = () => {
+    setModal(!modal);
+  };
 
   return (
-    <div className="buttonbox">
-     <a className="button" href="">Update Profile</a>
+    <div>
+      <div onClick={togglePop}>
+        <button className="button">Update Details</button>
+      </div>
+      {modal ? (
+        <UserUpdate
+          user={user}
+          setUser={setUser}
+          toggle={togglePop}
+          setImgUrl={setImgUrl}
+        />
+      ) : null}
     </div>
   );
 };
+
 export default UserButtons;

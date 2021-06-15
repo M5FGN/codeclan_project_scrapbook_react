@@ -9,12 +9,12 @@ const UserForm = ({ setUser }) => {
   const handleLogIn = function (event) {
     event.preventDefault();
     // console.dir(event.target);
-    const name = event.target.name.value;
+    const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(name, password);
+    console.log(email, password);
 
     fetch(
-      `http://localhost:8080/api/users/login?name=${name}&password=${password}`
+      `http://localhost:8080/api/users/login?email=${email}&password=${password}`
     )
       .then((res) => res.json())
       .then((user) => {
@@ -33,12 +33,12 @@ const UserForm = ({ setUser }) => {
       <div className="card formbox">
         <h2 data-testid="log-in-scrapbook">Log In to ScrapBook ...</h2>
       <form  data-testid="logged-in" onSubmit={handleLogIn}>
-        <label>Username:</label>
+        <label>Email:</label>
         <br></br>
         <input data-testid="user-name"
           type="text"
-          placeholder="Enter User Name ..."
-          id="name"
+          placeholder="Enter E-mail"
+          id="email"
         ></input>
         <br></br>
         <label>Password:</label>

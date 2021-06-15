@@ -11,7 +11,7 @@ describe("UserUpdate", () => {
     const stubbedUser = {
       name: "Ahmet",
       bio: "Young Boy",
-      profilepicture: "old memories"
+      
       
     };
 
@@ -22,7 +22,7 @@ describe("UserUpdate", () => {
         );
     
         expect(getByTestId("bio").value).toBe("");
-        expect(getByTestId("profilepicture").value).toBe("");
+        
       });
 
       // second test case to check user can update profile
@@ -31,11 +31,9 @@ describe("UserUpdate", () => {
           <UserUpdate setUser={stubbedUser} />
         );
         getByTestId("bio").value = "Young Boy";
-        getByTestId("profilepicture").value = "old memories";
-
         getByTestId("submit").onsubmit;
 
-        let container = render(<UserDetail user={stubbedUser} />);
+       let container = render(<UserDetail user={stubbedUser} />);
        expect(container.getByTestId('name')).toHaveTextContent("Ahmet");
     
       });

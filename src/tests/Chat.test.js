@@ -38,7 +38,7 @@ describe("Chat", () => {
 
         const messageList = [{sender:"Ahmet", message:"testing message"}];
 
-        console.log("textcontent == "+getByTestId('dmessagelist').textContent);
+        // console.log("textcontent == "+getByTestId('dmessagelist').textContent);
         expect(container.getByTestId('dmessagelist')).toContainHTML("<ul data-testid=\"dmessagelist\" />");
       });
 

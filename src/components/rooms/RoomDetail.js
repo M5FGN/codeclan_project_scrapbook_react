@@ -11,6 +11,9 @@ const RoomDetail = ({ foundRoom, fetchUser, setUser, user }) => {
       {user.email === foundRoom.admin ? (
         <RoomButtons room={foundRoom} fetchUser={fetchUser} setUser={setUser} />
       ) : null}
+      <a className="button" href="">
+        Add Post
+      </a>
     </div>
   );
 };

@@ -94,6 +94,7 @@ const Chat = ({foundRoom, user}) => {
   
     if (messages) {
       messageList = messages.map((msg, index) => {
+        const data_test_id = "message_"+{index};
         return <li key={index}>{msg.sender} said: {msg.message}</li>;
       });
     }
@@ -105,14 +106,14 @@ const Chat = ({foundRoom, user}) => {
     return (
       <>
         <form action="" onSubmit={sendMessage}>
-          <input data-testid="message"
+          <input data-testid="dmessage"
             type="text"
             name="message"
           />
           <input data-testid="submit" type="submit" />
         </form>
         {/* <ul>{messageList ? messageList : fetchAllMessages()}</ul> */}
-        <ul>
+        <ul data-testid="dmessagelist">
           {messageList}
           {listMsgs}
         </ul>

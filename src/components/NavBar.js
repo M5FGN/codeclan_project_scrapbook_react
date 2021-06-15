@@ -15,11 +15,11 @@ const NavBar = ({ user, rooms }) => {
       <div className="logo">
         <Logo />
       </div>
-      <RoomContainer rooms={rooms} user={user} />
+      {/* <RoomContainer rooms={rooms} user={user} /> */}
       <div className="links">
         <ul>
           <li>
-            Add New Room
+            <Link to="/rooms/new">Add Room</Link>
           </li>
           <li>
             {" "}

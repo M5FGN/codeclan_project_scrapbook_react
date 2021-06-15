@@ -8,7 +8,6 @@ import Slider from "../components/Slider";
 
 const UserContainer = ({ user, setUser }) => {
   const [rooms, setRooms] = useState([]);
-  
 
   if (!user) {
     return "Loading...";
@@ -30,7 +29,6 @@ const UserContainer = ({ user, setUser }) => {
 
       <div className="gallery">
         <UserRooms user={user} />
-        
       </div>
 
       <Footer />

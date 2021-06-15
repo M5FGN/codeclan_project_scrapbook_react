@@ -15,7 +15,7 @@ class UserService extends Request {
   d;
 
   addRoomToUser(room, id) {
-    return fetch(`${this.url}/${id}`, {
+    return fetch(`${this.url}/${id}/room`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(room),

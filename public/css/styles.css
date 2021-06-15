@@ -3,7 +3,6 @@ body {
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: stretch;
   background-attachment: fixed;
 }
 
@@ -216,9 +215,9 @@ h2 {
 }
 
 .gallery {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   margin: 0 10px;
 }
 
@@ -396,7 +395,6 @@ article.nextSlide {
 
 .myrooms {
   margin: 30px;
-
 }
 
 .search-bar-container li {
@@ -420,4 +418,8 @@ article.nextSlide {
 
 .hidden {
   display: none;
+}
+
+.marginbot {
+  margin-bottom: 30px;
 }

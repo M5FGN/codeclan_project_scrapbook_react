@@ -11,6 +11,11 @@ const RoomDetail = ({ foundRoom, fetchUser, setUser, user }) => {
       {user.email === foundRoom.admin ? (
         <RoomButtons room={foundRoom} fetchUser={fetchUser} setUser={setUser} />
       ) : null}
+      <div className="marginbot">
+      <a className="button" href="">
+        Add Post
+      </a>
+      </div>
     </div>
   );
 };

@@ -103,20 +103,21 @@ const Chat = ({foundRoom, user}) => {
     });
   
     return (
-      <>
-        <form action="" onSubmit={sendMessage}>
-          <input
-            type="text"
-            name="message"
-          />
-          <input type="submit" />
-        </form>
+      <div className="card chatbox">
+        <h2 className="chattitle">Chat History</h2>
         {/* <ul>{messageList ? messageList : fetchAllMessages()}</ul> */}
-        <ul>
+        <ul className="chathistory">
           {messageList}
           {listMsgs}
         </ul>
-      </>
+        <form action="" onSubmit={sendMessage}>
+          <input className="chatinput"
+            type="text"
+            name="message"
+          />
+          <input className="button" type="submit" value="Send" />
+        </form>
+      </div>
     );
   };
   export default Chat;

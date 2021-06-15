@@ -434,3 +434,20 @@ article.nextSlide {
 .marginbot {
   margin-bottom: 30px;
 }
+
+.chatbox {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.chatinput {
+  padding: 15px !important;
+}
+
+.chattitle {
+  margin: 10px 0;
+}
+
+.chathistory {
+  list-style-type: none;
+  padding-right: 40px;
+}

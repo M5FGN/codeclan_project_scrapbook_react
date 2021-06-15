@@ -5,6 +5,7 @@ import SignUp from "../components/SignUp";
 import RoomContainer from "./RoomContainer";
 import NavBar from "../components/NavBar";
 import Request from "../helpers/request";
+import CreateRoom from "../components/CreateRoom";
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,6 +34,10 @@ const MainContainer = () => {
     return <Room foundRoom={room} />;
   };
 
+  const fetchUser = () => {
+    return fetch(url + user.id);
+  };
+
   useEffect(() => {
     const requestUsers = new Request(url + "users/");
     const userId = window.sessionStorage.getItem("userId");
@@ -45,6 +50,7 @@ const MainContainer = () => {
     return (
       <>
         <Router>
+          <NavBar rooms={rooms} user={user} />
           <Switch>
             <Route path="/login">
               <Redirect to="/" />
@@ -62,25 +68,27 @@ const MainContainer = () => {
               }}
             />
             <Route
+              path="/rooms/new"
+              render={() => <CreateRoom user={user} />}
+            />
+            <Route
               path={"/rooms/:id"}
               render={(props) => {
                 const id = props.match.params.id;
-                const foundRoom = user.rooms.find((room) => {
+                const foundRoom = rooms.find((room) => {
                   return Number(room.id) == Number(id);
                 });
                 const roomToJoin = rooms.find((room) => {
                   return Number(room.id) == Number(id);
                 });
 
-                const finalRoom = rooms.find((room) => {
-                  return room.id == foundRoom.id;
-                });
-
                 return (
                   <Room
-                    foundRoom={finalRoom}
+                    foundRoom={foundRoom}
                     user={user}
                     roomToJoin={roomToJoin}
+                    fetchUser={fetchUser}
+                    setUser={setUser}
                   />
                 );
               }}

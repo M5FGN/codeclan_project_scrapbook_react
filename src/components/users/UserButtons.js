@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import UserUpdate from './UserUpdate';
 
@@ -24,4 +25,6 @@ const UserButtons=({user, setUser}) => {
    }
 
 
-  export default UserButtons;
+
+export default UserButtons;
+

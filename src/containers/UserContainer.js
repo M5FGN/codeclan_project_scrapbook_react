@@ -18,7 +18,6 @@ const UserContainer = ({ user, setUser }) => {
 
   return (
     <div>
-      <NavBar />
       <h1>{user.name}</h1>
       <div className="top">
         <div className="detail">

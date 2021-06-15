@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
-import RecentPosts from '../components/users/RecentPosts';
+// import RecentPosts from '../components/users/RecentPosts';
 
-function Slider() {
-  const [recentPosts, setRecentPosts] = useState(RecentPosts);
+function Slider({user}) {
+  const [recentPosts, setRecentPosts] = useState([]);
   const [index, setIndex] = React.useState(0);
 
   useEffect(() => {
@@ -24,6 +24,18 @@ function Slider() {
       clearInterval(slider);
     };
   }, [index]);
+
+  useEffect(() => {
+    if(user.posts.length > 4){
+      const posts = user.posts.filter((post, index) => {
+        return index >= user.posts.length - 4;
+      })
+      setRecentPosts(posts);
+    } else {
+      setRecentPosts(user.posts)
+    }
+    console.log(recentPosts)
+  },[])
 
   return (
     <section className="card slider">

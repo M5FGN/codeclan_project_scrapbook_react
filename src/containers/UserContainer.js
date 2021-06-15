@@ -23,7 +23,7 @@ const UserContainer = ({ user, setUser }) => {
           <UserDetail user={user} setUser={setUser} />
         </div>
         <div className="feature">
-          <Slider />
+          <Slider user={user}/>
         </div>
       </div>
 

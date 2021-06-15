@@ -2,6 +2,7 @@ import React from 'react';
 import UserUpdate from '../components/users/UserUpdate';
 import UserButtons from '../components/users/UserButtons';
 import { render, fireEvent } from '@testing-library/react';
+import UserDetail from '../components/users/UserDetail';
 
 describe("UserUpdate", () => {
     let container;
@@ -24,6 +25,19 @@ describe("UserUpdate", () => {
         expect(getByTestId("profilepicture").value).toBe("");
       });
 
-      
+      // second test case to check user can update profile
+    it("should be able to update profile", () => {
+        const { getByTestId } = render(
+          <UserUpdate setUser={stubbedUser} />
+        );
+        getByTestId("bio").value = "Young Boy";
+        getByTestId("profilepicture").value = "old memories";
+
+        getByTestId("submit").onsubmit;
+
+        let container = render(<UserDetail user={stubbedUser} />);
+       expect(container.getByTestId('name')).toHaveTextContent("Ahmet");
+    
+      });
 
 })

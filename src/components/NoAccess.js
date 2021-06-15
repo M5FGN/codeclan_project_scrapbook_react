@@ -20,7 +20,7 @@ const NoAccess = ({ user, roomToJoin }) => {
     }
   };
   return (
-    <div>
+    <div className="password-form">
       <h2>
         You do not have access to {roomToJoin ? roomToJoin.roomName : null}!
       </h2>

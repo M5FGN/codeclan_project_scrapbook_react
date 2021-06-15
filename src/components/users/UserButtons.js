@@ -1,16 +1,30 @@
-import React from "react";
-import { Link } from "react-router-dom";
 
-const UserButtons = () => {
-  const searchBarContainer = document.querySelector(".search-bar-container");
-  const addBtn = document.querySelector(".button");
+import React, { useState } from 'react';
+import UserUpdate from './UserUpdate';
 
-  console.log(addBtn);
+const UserButtons=({user, setUser}) => {
 
-  return (
-    <div className="buttonbox">
-     <a className="button" href="">Update Profile</a>
-    </div>
-  );
-};
+  const [modal, setModal] = useState(false);
+    
+
+    const togglePop = () => {
+     setModal(!modal);
+    };
+
+
+
+  
+    return (
+     <div>
+      <div onClick={togglePop}>
+        <button>Update Details</button>
+      </div>
+      {modal ? <UserUpdate user={user} setUser={setUser} toggle={togglePop} /> : null}
+     </div>
+    );
+   }
+
+
+
 export default UserButtons;
+

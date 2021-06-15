@@ -9,6 +9,7 @@ const SignUp = () => {
 
   const [error, setError] = useState(null);
   const [email, setEmail] = useState(null);
+  // const [foundUser, setFoundUser] = useState(null);
 
   const request = new Request("http://localhost:8080/api/users");
   const emailReq = new Request("http://localhost:8080/api/users/signup");
@@ -29,22 +30,28 @@ const SignUp = () => {
     const confirmPassword = event.target.confirmPassword.value;
     const dob = event.target.DOB.value;
 
-    const foundUser = emailReq.getByEmail(email);
+    emailReq.getByEmail(email).then((user) => {
 
-    const user = {
-      email: email,
-      name: name,
-      password: password,
-      dateOfBirth: dob,
-    };
+      setError("Email already exists")
+      console.log(user)
 
-    if (password === confirmPassword && !user) {
-      request.post(user);
-      history.push("/login");
-    } else {
-      setError("password's don't match")
-      console.log("error message")
-    }
+    }).catch(error => {
+      setError("Turn your router off and on again")
+        const newUser = {
+        email: email,
+        name: name,
+        password: password,
+        dateOfBirth: dob,
+      };
+  
+      if (password === confirmPassword) {
+        request.post(newUser);
+        history.push("/login");
+      } else {
+        setError("Passwords don't match")
+      }
+    });
+
   };
 
   return (
@@ -56,6 +63,10 @@ const SignUp = () => {
     <div className="card formbox">
       <h2>Sign Up to ScrapBook ...</h2>
       <form  data-testid="signed-up" className="form" onSubmit={handleSignUp}>
+      <label htmlFor="">Email:</label>
+        <br></br>
+        <input data-testid="email" type="text" name="email" />
+        <br></br>
         <label htmlFor="">Name:</label>
         <br></br>
         <input data-testid="name" type="text" name="name" />

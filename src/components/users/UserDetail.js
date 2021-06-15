@@ -4,6 +4,7 @@ import UserButtons from "./UserButtons";
 
 const UserDetail = ({ user, setUser }) => {
   const [imgUrl, setImgUrl] = useState(null);
+
   return (
     <div className="card detailsbox">
       <h2 data-testid="name">{user.name}</h2>

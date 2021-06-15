@@ -3,7 +3,6 @@ body {
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: stretch;
   background-attachment: fixed;
 }
 
@@ -216,9 +215,9 @@ h2 {
 }
 
 .gallery {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   margin: 0 10px;
 }
 
@@ -229,7 +228,7 @@ h2 {
 }
 
 form > label {
-  font-size: 18px;
+  font-size: 20px;
   width: 50%;
   margin: 20px;
 }
@@ -239,6 +238,17 @@ input[type="text"] {
   padding: 5px;
   margin: 10px;
 }
+
+input[type="file"] {
+  width: 50%;
+  padding: 5px;
+  margin: 10px;
+}
+
+input[type="file" i] {
+  font-size: 20px;
+}
+
 
 .formbox {
   width: 60%;
@@ -396,7 +406,6 @@ article.nextSlide {
 
 .myrooms {
   margin: 30px;
-
 }
 
 .search-bar-container li {
@@ -420,4 +429,25 @@ article.nextSlide {
 
 .hidden {
   display: none;
+}
+
+.marginbot {
+  margin-bottom: 30px;
+}
+
+.chatbox {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.chatinput {
+  padding: 15px !important;
+}
+
+.chattitle {
+  margin: 10px 0;
+}
+
+.chathistory {
+  list-style-type: none;
+  padding-right: 40px;
 }

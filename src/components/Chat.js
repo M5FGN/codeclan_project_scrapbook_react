@@ -104,13 +104,20 @@ const Chat = ({foundRoom, user}) => {
     });
   
     return (
-      <>
+      <div className="card chatbox">
+        <h2 className="chattitle">Chat History</h2>
+        {/* <ul>{messageList ? messageList : fetchAllMessages()}</ul> */}
+        <ul className="chathistory">
+          {messageList}
+          {listMsgs}
+        </ul>
         <form action="" onSubmit={sendMessage}>
-          <input data-testid="dmessage"
+
+          <input className="chatinput" data-testid="dmessage"
             type="text"
             name="message"
           />
-          <input data-testid="submit" type="submit" />
+          <input className="button" data-testid="submit" type="submit" value="Send" />
         </form>
         {/* <ul>{messageList ? messageList : fetchAllMessages()}</ul> */}
         <ul data-testid="dmessagelist">

@@ -23,9 +23,11 @@ const UserRooms = ({ user }) => {
   });
 
   return (
-    <div className="card gallery">
-      <h2 className="myrooms">My Rooms</h2>
+    <div>
+    <h2>My Rooms</h2>
+    <div className="card gallery twenty">
       <ul>{userRoomsNodes}</ul>
+    </div>
     </div>
   );
 };

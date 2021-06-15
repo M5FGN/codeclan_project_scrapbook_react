@@ -45,11 +45,11 @@ const NavBar = ({ user, rooms }) => {
           </li>
         </ul>
       </div>
+      </div>
       <button className="hamburger" onClick={handleToggle}>
     <GiHamburgerMenu/>
       </button>
       
-    </div>
     </div>
   );
 };

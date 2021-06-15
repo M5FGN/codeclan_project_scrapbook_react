@@ -9,34 +9,32 @@ const AddPost = ({ user, foundRoom }) => {
     event.preventDefault();
     const request = new Request("http://localhost:8080/api/posts");
     const caption = event.target.caption.value;
-    
 
     const date = new Date();
 
     const dateTime = date.getDate();
 
     const post = {
-        timeStamp : dateTime,
-        caption : caption,
-        img_link : "",
-        room : {
-            id : foundRoom.id,
-            roomName : foundRoom.roomName,
-            bio : foundRoom.bio,
-            password : foundRoom.password,
-            admin : foundRoom.admin,
-        },
-        user : {
-            id : user.id,
-            email : user.email,
-            name : user.name,
-            dateOfBirth : user.dateOfBirth,
-            password : user.password
-        }
+      timeStamp: dateTime,
+      caption: caption,
+      img_link: "",
+      room: {
+        id: foundRoom.id,
+        roomName: foundRoom.roomName,
+        bio: foundRoom.bio,
+        password: foundRoom.password,
+        admin: foundRoom.admin,
+      },
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        dateOfBirth: user.dateOfBirth,
+        password: user.password,
+      },
     };
 
-
-    const uploadTask = storage.ref(`profile-pics/${profile.caption}`).put(profile);
+    const uploadTask = storage.ref(`posts/${profile.name}`).put(profile);
     uploadTask.on(
       "state-changed",
       (snapshot) => {},
@@ -45,7 +43,7 @@ const AddPost = ({ user, foundRoom }) => {
       },
       () => {
         storage
-          .ref("profile-pics")
+          .ref("posts")
           .child(profile.name)
           .getDownloadURL()
           .then((url) => {
@@ -67,16 +65,13 @@ const AddPost = ({ user, foundRoom }) => {
 
   return (
     <form className="form" onSubmit={PostUploadForm}>
-
       <br></br>
       <label htmlFor="">Caption</label>
       <br></br>
-      <input data-testid="caption" type="text" name="caption"/>
+      <input data-testid="caption" type="text" name="caption" />
       <br></br>
 
-
-
-      <label htmlFor="">Add Post</label>  
+      <label htmlFor="">Add Post</label>
       <br></br>
       <input
         // allows you to reach into your file directory and upload image to the browser

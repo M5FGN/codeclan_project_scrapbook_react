@@ -105,11 +105,11 @@ const Chat = ({foundRoom, user}) => {
     return (
       <>
         <form action="" onSubmit={sendMessage}>
-          <input
+          <input data-testid="message"
             type="text"
             name="message"
           />
-          <input type="submit" />
+          <input data-testid="submit" type="submit" />
         </form>
         {/* <ul>{messageList ? messageList : fetchAllMessages()}</ul> */}
         <ul>

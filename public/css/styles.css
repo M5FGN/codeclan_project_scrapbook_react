@@ -4,6 +4,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: stretch;
+  background-attachment: fixed;
 }
 
 
@@ -24,18 +25,105 @@ h2 {
 
 .nav {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-auto-columns: 1fr;
+  grid-template-columns: 2fr 3fr 2fr;
   grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
 }
 
-.logo {
-  grid-area: 1 / 1 / 2 / 3;
+.logo { 
+  grid-area: 1 / 1 / 2 / 3; 
 }
-.links {
-  grid-area: 1 / 2 / 2 / 3;
+
+.search { 
+  grid-area: 1 / 2 / 2 / 3; 
+}
+
+.links { 
+  grid-area: 1 / 3 / 2 / 4; 
+}
+
+.hamburger { 
+  display: none;
+}
+
+@media screen and (max-width: 1460px) {
+
+  .nav {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 0.3fr 0.3fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "logo links"
+      "search search";
+  }
+  
+  .logo { grid-area: logo; }
+  
+  .links { grid-area: links; }
+  
+  .search { grid-area: search; 
+    margin-bottom: 20px;}
+  
+  .search-bar-element {
+    padding: 0px !important;
+  }
+
+}
+
+@media screen and (max-width: 850px) {
+
+  .nav {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "logo hamburger"
+      "links links"
+      "search search";
+  }
+  
+  .logo { grid-area: logo; }
+  
+  .hamburger { grid-area: hamburger; }
+  
+  .links { 
+    grid-area: links; 
+  }
+
+  .show { 
+    display: block;
+  } 
+  .hide {
+    display: none;
+  }  
+  
+  .search { grid-area: search;
+  margin-bottom: 20px; }
+  
+
+  .hamburger { 
+    display: block;
+    font-size: 50px;
+    padding:20px;
+    text-align: right !important;
+    background: none;
+    border: none;
+  }
+
+  .search-bar-element {
+    padding: 0px !important;
+  }
+
 }
 
 
@@ -260,7 +348,6 @@ article.nextSlide {
 /* Search Bar */
 
 .search-bar-container {
-  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
@@ -270,12 +357,13 @@ article.nextSlide {
 
 
 .search-bar {
+  width: 100% !important;
   padding: 30px;
   border: none;
   height: 25px;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 5px 3px 10px 5px #e1dbf1;
+  box-shadow: 5px 3px 22px 1px silver;
   outline: none;
   font-family: inherit;
 }

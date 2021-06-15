@@ -48,6 +48,7 @@ const RoomContainer = ({ user, rooms }) => {
         <div className="rooms-container">
           <ul>{roomList ? roomList : null}</ul>
         </div>
+
       </div>
     </>
   );

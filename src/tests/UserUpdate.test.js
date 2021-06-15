@@ -10,8 +10,7 @@ describe("UserUpdate", () => {
     const mockChangeValue = jest.fn();
     const stubbedUser = {
       name: "Ahmet",
-      bio: "Young Boy",
-      
+      bio: "Young Boy"
       
     };
 

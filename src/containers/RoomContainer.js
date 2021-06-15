@@ -5,7 +5,7 @@ import RoomListItem from "../components/RoomListItem";
 const RoomContainer = ({ user, rooms }) => {
   const [search, setSearch] = useState("");
   let roomList;
-
+  const searchBarContainer = document.querySelector(".search-bar-container");
   const styles = {
     backgroundColor: "rgba(0,0,0,0.0)",
     transition: "background-color 1s",
@@ -29,13 +29,13 @@ const RoomContainer = ({ user, rooms }) => {
         );
       }
     });
-    styles.height = "100%";
+
     styles.backgroundColor = "rgba(0,0,0,0.3)";
   }
 
   return (
     <>
-      <div className="search-bar-container" style={styles}>
+      <div className="search-bar-container">
         <div className="search-bar-element">
           <input
             className="search-bar"

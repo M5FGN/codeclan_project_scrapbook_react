@@ -3,7 +3,6 @@ import UserForm from '../components/UserForm';
 import UserDetail from '../components/users/UserDetail'
 import { render, fireEvent } from '@testing-library/react';
 
-
 describe("UserForm", () => {
     let container;
    

@@ -4,9 +4,12 @@ import React from 'react';
 const Post = ({post}) => {
 
     return (
-        <div>
-            <h1>{post.caption}</h1>    
-        </div>
+
+            <ul className="card gallery post">
+                <li className="postitem"> <div>
+                <h3>{post.caption}</h3> </div></li> 
+            </ul>
+
     )
 
 }

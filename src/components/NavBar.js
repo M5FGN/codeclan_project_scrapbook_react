@@ -19,8 +19,11 @@ const NavBar = ({ user, rooms }) => {
       <div className="links">
         <ul>
           <li>
+            Add New Room
+          </li>
+          <li>
             {" "}
-            <Link to="/">Home</Link>
+            <Link to="/">My Profile</Link>
           </li>
           <li>
             <Link to="/login" onClick={handleLogOut}>

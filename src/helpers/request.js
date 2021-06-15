@@ -13,6 +13,10 @@ class Request {
     });
   }
 
+  getByEmail(email){
+    return fetch(this.url + `?email=${email}`).then((res) => res.json());
+  }
+
   delete() {
     return fetch(this.url, {
       method: "DELETE",

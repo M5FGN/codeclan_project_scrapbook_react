@@ -34,8 +34,9 @@ const Room = ({ foundRoom, roomToJoin, user, fetchUser, setUser }) => {
           ) : null}
         </div>
         <div className="feature">
-          <Chat />
+          <div className="feature"><Chat foundRoom={foundRoom} user={user} /></div>
         </div>
+
       </div>
       {foundRoom ? <RoomPosts posts={foundRoom.posts} /> : null}
       <Footer />

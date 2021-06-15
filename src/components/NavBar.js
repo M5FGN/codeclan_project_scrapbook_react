@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import Logo from "../components/Logo";
 import { Link, useHistory } from "react-router-dom";
 import RoomContainer from "../containers/RoomContainer";
+import {GiHamburgerMenu} from 'react-icons/gi';
 
 const NavBar = ({ user, rooms }) => {
   let history = useHistory();
@@ -9,6 +10,12 @@ const NavBar = ({ user, rooms }) => {
     window.sessionStorage.clear();
     window.location.reload(false);
   };
+
+  const [isActive, setActive] = useState("false");
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
+
 
   return (
     <div className="nav">
@@ -18,7 +25,7 @@ const NavBar = ({ user, rooms }) => {
       <div className="search">
       <RoomContainer rooms={rooms} user={user} />
       </div>
-      <div className="links">
+      <div className={isActive ? "links show" : "links hide"}>
         <ul>
           <li>
             Add New Room
@@ -34,6 +41,10 @@ const NavBar = ({ user, rooms }) => {
           </li>
         </ul>
       </div>
+      <button className="hamburger" onClick={handleToggle}>
+    <GiHamburgerMenu/>
+      </button>
+      
     </div>
   );
 };

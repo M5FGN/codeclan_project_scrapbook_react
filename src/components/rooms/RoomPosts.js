@@ -8,9 +8,13 @@ const RoomPosts = ({posts}) => {
     })
 
     return (
-        <div className="card twenty">
+        <div>
             <h2 className="poststitle">Room Posts</h2>
+        
+        <div className="card twenty">
+            
             {postComp}
+        </div>
         </div>
     )
 }

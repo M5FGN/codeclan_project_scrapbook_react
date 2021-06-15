@@ -18,6 +18,7 @@ const RoomDetail = ({ foundRoom, fetchUser, setUser, user }) => {
       {user.email === foundRoom.admin ? (
         <RoomButtons room={foundRoom} fetchUser={fetchUser} setUser={setUser} />
       ) : null}
+                <div className="marginbot">
         <div onClick={togglePop}>
         <button className="button">Add Post</button>
       </div>
@@ -28,6 +29,7 @@ const RoomDetail = ({ foundRoom, fetchUser, setUser, user }) => {
           toggle={togglePop}
         />
       ) : null}
+      </div>
     </div>
   );
 };

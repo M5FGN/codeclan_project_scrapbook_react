@@ -10,7 +10,7 @@ const UserDetail = ({ user, setUser }) => {
   return (
     <div className="card detailsbox">
       <h2 data-testid="name">{user.name}</h2>
-      <img src={user.profilePicture ? user.profilePicture : null} alt="" />
+      <img className="profileimg" src={user.profilePicture ? user.profilePicture : null} alt="" />
       <p>{user.dateOfBirth}</p>
       <p>{user.bio}</p>
       <UserButtons user={user} setUser={setUser} setImgUrl={setImgUrl} />

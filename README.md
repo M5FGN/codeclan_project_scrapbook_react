@@ -25,12 +25,16 @@ Scrapbook is an app for family/close friends which chronologically lists photos/
 
 # Instructions to View the App - Back - End
 
+Source: [Back End Repo](https://github.com/Li-Ri/ScrapBook)
+
 1. Pull the Back End Repo from GitHub
 2. Open the back end in your IDE.
 3. Locate and run the file <b>ScrapbookServiceDbApplication<b>
 
 
 # Instructions to View the App - Front End
+
+Source: [Front End Repo](https://github.com/M5FGN/codeclan_project_scrapbook_react)
 
 1. Pull the Front End Repo from GitHub
 2. In the terminal access the project's front end folder.

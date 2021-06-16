@@ -50,12 +50,18 @@ const AddPost = ({ user, foundRoom }) => {
             .then((url) => {
               post.img_link = url;
               request.post(post);
+            })
+            .then(() => {
+              window.location.reload();
             });
         }
       );
     } else {
-      request.post(post);
+      request.post(post).then(() => {
+        window.location.reload();
+      });
     }
+
     // user => setUser(user)
     // window.location.reload(false);
   };

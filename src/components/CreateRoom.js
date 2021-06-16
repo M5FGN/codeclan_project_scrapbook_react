@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import RoomService from "../helpers/RoomService";
 import UserService from "../helpers/UserService";
 
-const CreateRoom = ({ user }) => {
+const CreateRoom = ({ user, fetchUser }) => {
   let history = useHistory();
 
   const handleCreateRoom = (event) => {
@@ -23,20 +23,26 @@ const CreateRoom = ({ user }) => {
     roomService
       .post(newRoom)
       .then(() => roomService.getByRoomNameAndAdmin(roomName, admin))
-      .then((room) => userService.addRoomToUser(room, user.id));
-
-    history.push("/");
+      .then((room) => {
+        userService.addRoomToUser(room, user.id);
+        fetchUser(user.id);
+      })
+      .then(() => {
+        history.push(`/${user.id}`);
+        window.location.reload();
+      });
   };
   return (
     <div className="card formbox">
       <h2>Create Room</h2>
       <form action="" onSubmit={handleCreateRoom}>
         <label htmlFor="">Room Name:</label> <br></br>
-        <input type="text" name="title" autocomplete="off"/> <br></br>
+
+        <input type="text" name="title" autocomplete="off" /> <br></br>
         <label htmlFor="">Room Bio</label> <br></br>
-        <input type="text" name="bio" autocomplete="off"/> <br></br>
+        <input type="text" name="bio" autocomplete="off" /> <br></br>
         <label htmlFor="">Room Password</label> <br></br>
-        <input type="password" name="password" autocomplete="off"/> <br></br>
+        <input type="password" name="password" autocomplete="off" /> <br></br>
         <input className="button" type="submit" value="Add Room" />
       </form>
     </div>

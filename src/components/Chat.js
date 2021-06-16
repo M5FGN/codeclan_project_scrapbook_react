@@ -111,7 +111,7 @@ const Chat = ({ foundRoom, user }) => {
     <div className="card chatbox">
       <h2 className="chattitle">Chat History</h2>
       {/* <ul>{messageList ? messageList : fetchAllMessages()}</ul> */}
-      <ul className="chathistory">
+      <ul className="chathistory" data-testid="dmessagelist">
         {messageList}
         {listMsgs}
       </ul>
@@ -130,10 +130,6 @@ const Chat = ({ foundRoom, user }) => {
         />
       </form>
       {/* <ul>{messageList ? messageList : fetchAllMessages()}</ul> */}
-      <ul data-testid="dmessagelist">
-        {messageList}
-        {listMsgs}
-      </ul>
     </div>
   );
 };

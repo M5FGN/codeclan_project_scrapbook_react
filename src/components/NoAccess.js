@@ -13,8 +13,10 @@ const NoAccess = ({ user, roomToJoin }) => {
 
     if (password === roomToJoin.password) {
       const request = new Request(url + roomToJoin.id);
-      request.put(user);
-      history.push("/");
+      request.put(user).then(() => {
+        history.push(`/${user.id}`);
+        window.location.reload();
+      });
     } else {
       setError(!error);
     }
@@ -26,7 +28,7 @@ const NoAccess = ({ user, roomToJoin }) => {
       </h2>
       <h3>Enter Password to Join</h3>
       <form action="" onSubmit={handlePasswordToJoin}>
-        <input type="text" name="password" />
+        <input type="password" name="password" />
         <input type="submit" />
       </form>
       <h3>{error ? "Wrong Password" : null}</h3>

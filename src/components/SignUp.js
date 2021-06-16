@@ -65,7 +65,8 @@ const SignUp = () => {
       <form  data-testid="signed-up" className="form" onSubmit={handleSignUp}>
       <label htmlFor="">Email:</label>
         <br></br>
-        <input data-testid="email" type="text" name="email" autocomplete="off" />
+
+        <input data-testid="email" autocomplete="off" type="text" name="email" />
         <br></br>
         <label htmlFor="">Name:</label>
         <br></br>
@@ -81,7 +82,7 @@ const SignUp = () => {
         <br></br>
         <label htmlFor="">Confirm Password:</label>
         <br></br>
-        <input data-testid="confirmpassword" type="password" name="confirmPassword" autocomplete="off" />
+        <input data-testid="confirmpassword" type="password" name="confirmPassword" autocomplete="off"/>
         <br></br>
         <input data-testid="submit" className="button" type="submit" value="Sign Up..." />
       </form>

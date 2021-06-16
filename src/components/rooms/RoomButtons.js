@@ -18,9 +18,6 @@ const RoomButtons = ({ room, fetchUser, setUser }) => {
   const handleAddRoom = () => {};
   return (
     <div className="buttonbox">
-      <a className="button" href="">
-        Invite to Room
-      </a>
       <a className="button" onClick={handleDelete}>
         Delete Room
       </a>

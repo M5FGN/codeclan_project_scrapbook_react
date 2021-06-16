@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RoomDetail from "../rooms/RoomDetail";
 import Chat from "../Chat";
 import NavBar from "../NavBar";
@@ -34,9 +34,10 @@ const Room = ({ foundRoom, roomToJoin, user, fetchUser, setUser }) => {
           ) : null}
         </div>
         <div className="feature">
-          <div className="feature"><Chat foundRoom={foundRoom} user={user} /></div>
+          <div className="feature">
+            <Chat foundRoom={foundRoom} user={user} />
+          </div>
         </div>
-
       </div>
       {foundRoom ? <RoomPosts posts={foundRoom.posts} /> : null}
       <Footer />

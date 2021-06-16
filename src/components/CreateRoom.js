@@ -26,9 +26,11 @@ const CreateRoom = ({ user, fetchUser }) => {
       .then((room) => {
         userService.addRoomToUser(room, user.id);
         fetchUser(user.id);
+      })
+      .then(() => {
+        history.push("/");
+        window.location.reload();
       });
-    history.push("/");
-    window.location.reload();
   };
   return (
     <div className="card formbox">

@@ -8,7 +8,7 @@ const Post = ({post}) => {
             <ul className="card gallery post">
                 <li className="postitem"> <div>
                 <h3>{post.caption}</h3> </div></li>
-                <img src={post.img_link} alt="" /> 
+                <img className="postimg" src={post.img_link} alt="" /> 
             </ul>
 
     )

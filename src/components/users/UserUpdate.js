@@ -35,11 +35,14 @@ const UserUpdate = ({ user, setUser, setImgUrl }) => {
               updateUser.profilePicture = url;
               request.put(updateUser);
               setImgUrl(url);
+            }).then(() => {
+              window.location.reload();
             });
         }
       );
     } else {
       request.put(updateUser);
+      window.location.reload();
     }
     // user => setUser(user)
     // window.location.reload(false);

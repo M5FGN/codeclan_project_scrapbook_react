@@ -92,24 +92,32 @@ const Chat = ({ foundRoom, user }) => {
     messageList = messages.map((msg, index) => {
       const data_test_id = "message_" + { index };
       return (
-        <li key={index}>
-          {msg.sender} said: {msg.message}
-        </li>
+        <div>
+          <br />
+          <li key={index}>
+            {msg.sender} said: {msg.message}
+          </li>
+          <br />
+      </div>
       );
     });
   }
 
   const newListMessages = listMsgs.map((msg, index) => {
     return (
-      <li key={index}>
-        {msg.sender} said: {msg.message}
-      </li>
+      <div>
+        <br />
+        <li key={index}>
+          {msg.sender} said: {msg.message}
+        </li>
+        <br />
+      </div>
     );
   });
 
   return (
     <div className="card chatbox">
-      <h2 className="chattitle">Chat History</h2>
+      <h2 className="chattitle">{foundRoom.roomName} - Chat</h2>
       {/* <ul>{messageList ? messageList : fetchAllMessages()}</ul> */}
       <ul className="chathistory" data-testid="dmessagelist">
         {messageList}

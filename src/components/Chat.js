@@ -92,13 +92,9 @@ const Chat = ({ foundRoom, user }) => {
     messageList = messages.map((msg, index) => {
       const data_test_id = "message_" + { index };
       return (
-        <div>
-          <br />
           <li key={index}>
             {msg.sender} said: {msg.message}
           </li>
-          <br />
-      </div>
       );
     });
   }

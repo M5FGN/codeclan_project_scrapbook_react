@@ -65,23 +65,23 @@ const SignUp = () => {
       <form  data-testid="signed-up" className="form" onSubmit={handleSignUp}>
       <label htmlFor="">Email:</label>
         <br></br>
-        <input data-testid="email" type="text" name="email" />
+        <input data-testid="email" autocomplete="off" type="text" name="email" />
         <br></br>
         <label htmlFor="">Name:</label>
         <br></br>
-        <input data-testid="name" type="text" name="name" />
+        <input data-testid="name" type="text" name="name" autocomplete="off" />
         <br></br>
         <label htmlFor="">Date Of Birth:</label>
         <br></br>
-        <input data-testid="DOB" type="text" name="DOB" />
+        <input data-testid="DOB" type="text" name="DOB" autocomplete="off" />
         <br></br>
         <label htmlFor="">Password:</label>
         <br></br>
-        <input data-testid="password" type="text" name="password" />
+        <input data-testid="password" type="password" name="password" autocomplete="off" />
         <br></br>
         <label htmlFor="">Confirm Password:</label>
         <br></br>
-        <input data-testid="confirmpassword" type="text" name="confirmPassword" />
+        <input data-testid="confirmpassword" type="password" name="confirmPassword" autocomplete="off"/>
         <br></br>
         <input data-testid="submit" className="button" type="submit" value="Sign Up..." />
       </form>

@@ -37,6 +37,7 @@ const CreateRoom = ({ user, fetchUser }) => {
       <h2>Create Room</h2>
       <form action="" onSubmit={handleCreateRoom}>
         <label htmlFor="">Room Name:</label> <br></br>
+
         <input type="text" name="title" autocomplete="off" /> <br></br>
         <label htmlFor="">Room Bio</label> <br></br>
         <input type="text" name="bio" autocomplete="off" /> <br></br>

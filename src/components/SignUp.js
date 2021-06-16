@@ -65,6 +65,7 @@ const SignUp = () => {
       <form  data-testid="signed-up" className="form" onSubmit={handleSignUp}>
       <label htmlFor="">Email:</label>
         <br></br>
+
         <input data-testid="email" autocomplete="off" type="text" name="email" />
         <br></br>
         <label htmlFor="">Name:</label>

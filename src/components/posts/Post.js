@@ -1,13 +1,16 @@
 import React from 'react';
 
 
-const Post = () => {
+const Post = ({post}) => {
 
     return (
-        <div>
-            <h1>Post</h1>
-            
-        </div>
+
+            <ul className="card gallery post">
+                <li className="postitem"> <div>
+                <img className="postimg imgtop" src={post.img_link} alt="" /> 
+                <h3>{post.caption}</h3> </div></li>
+            </ul>
+
     )
 
 }

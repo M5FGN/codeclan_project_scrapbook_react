@@ -1,12 +1,12 @@
-import React from 'react';
-import MainContainer from './containers/MainContainer';
-import './App.css';
+import React from "react";
+import MainContainer from "./containers/MainContainer";
+import "./App.css";
+import firebase from "firebase";
 
 function App() {
   return (
     <div className="App">
       <MainContainer />
-
     </div>
   );
 }

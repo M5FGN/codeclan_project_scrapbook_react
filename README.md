@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# SCRAPBOOK
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Brief
+Scrapbook is an app for family/close friends which chronologically lists photos/videos in dedicated rooms (close circle of friends, core family, extended family, cousins etc), which allows users to interact via chat/comments and share new content. This would be ideal for those who are looking to step away from social media and have their own little hub for consolidating and sharing memories.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Devleopment Team
+
+* [Ahmet Giritli](https://github.com/lydian7)
+* [Liam Richens](https://github.com/li-ri)
+* [Mary Fagan](https://github.com/M5FGN)
+* [Pooja Maheshwari](https://github.com/poojachugh15)
+
+
+## Technologies Used
+
+### App Development
+* Java
+* Spring
+* React
+
+## Testing
+* React Testing
+
+
+# Instructions to View the App - Back - End
+
+Source: [Back End Repo](https://github.com/Li-Ri/ScrapBook)
+
+1. Pull the Back End Repo from GitHub
+2. Open the back end in your IDE.
+3. Locate and run the file <b>ScrapbookServiceDbApplication<b>
+
+
+# Instructions to View the App - Front End
+
+Source: [Front End Repo](https://github.com/M5FGN/codeclan_project_scrapbook_react)
+
+1. Pull the Front End Repo from GitHub
+2. In the terminal access the project's front end folder.
+3. Install the npm packages. 
+
+### `npm install`
+
+4. Running the server on  [http://localhost:3000](http://localhost:3000) 
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# App Screenshots
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Screenshot of App Home Page
+![App Login Page]() 
 
-### `npm test`
+## Screenshot of Profile Page
+![Profile Page Screenshot]() 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screenshot of Room Page
+![Room Page Screenshot]() 

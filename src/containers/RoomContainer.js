@@ -1,18 +1,55 @@
-import React from 'react';
-import Room from '../components/rooms/Room';
-import RoomDetail from '../components/rooms/RoomDetail';
+import React, { useState } from "react";
+import RoomDetail from "../components/rooms/RoomDetail";
+import RoomListItem from "../components/RoomListItem";
 
+const RoomContainer = ({ user, rooms }) => {
+  const [search, setSearch] = useState("");
+  let roomList;
+  const searchBarContainer = document.querySelector(".search-bar-container");
+  const styles = {
+    backgroundColor: "rgba(0,0,0,0.0)",
+    transition: "background-color 1s",
+  };
 
-const RoomContainer = ({room}) => {
+  const handleInput = (e) => {
+    setSearch(e.target.value.toLowerCase());
+  };
 
-    if (!room){
-        return "Loading..."
-    }
-    return (
-    <div>
-    <h1>Room Container</h1>
-    <RoomDetail room={room} />
-    </div>
-)
-}
+  if (search) {
+    let reducedList = rooms.filter((room) => {
+      return room.roomName.slice(0, search.length).toLowerCase() == search;
+    });
+
+    roomList = reducedList.map((room, index) => {
+      if (room) {
+        return (
+          <li key={index}>
+            <RoomListItem user={user} foundRoom={room} user={user} />
+          </li>
+        );
+      }
+    });
+
+    styles.backgroundColor = "rgba(0,0,0,0.3)";
+  }
+
+  return (
+    <>
+      <div className="search-bar-container">
+        <div className="search-bar-element">
+          <input
+            className="search-bar"
+            type="text"
+            onChange={handleInput}
+            value={search}
+            placeholder="Search for a room"
+          />
+        </div>
+        <div className="rooms-container">
+          <ul>{roomList ? roomList : null}</ul>
+        </div>
+      </div>
+    </>
+  );
+};
 export default RoomContainer;

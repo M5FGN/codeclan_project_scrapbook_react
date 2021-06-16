@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react';
-import UserRooms from "../users/UserRooms"
+import React, { useEffect, useState } from "react";
+import UserRooms from "../users/UserRooms";
+import UserButtons from "./UserButtons";
 
+const UserDetail = ({ user, setUser }) => {
+  const [imgUrl, setImgUrl] = useState(null);
 
-const UserDetail = ({user}) => {
-
-
-    return (
-        <div>
-            <h2>{user.name}</h2>
-            <p> Profile Pic</p>
-            <p>{user.dateOfBirth}</p>
-            <p>{user.bio}</p>
-            <p><UserRooms user={user}/></p>
-        </div>
-
-    )
-
-}
+  return (
+    <div className="card detailsbox">
+      <h2 data-testid="name">{user.name}</h2>
+      <img className="profileimg" src={user.profilePicture ? user.profilePicture : null} alt="" />
+      <p>{user.dateOfBirth}</p>
+      <p>{user.bio}</p>
+      <UserButtons user={user} setUser={setUser} setImgUrl={setImgUrl} />
+    </div>
+  );
+};
 export default UserDetail;

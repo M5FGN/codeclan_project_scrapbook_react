@@ -277,8 +277,8 @@ Slider
 .section-center {
   margin: 30px auto;
   width: 100%;
-  height: 450px;
-  max-width: 800px;
+  height: 600px;
+  max-width: 750px;
   text-align: center;
   position: relative;
   display: flex;
@@ -286,9 +286,10 @@ Slider
 }
 .sliderimg {
   margin-bottom: 1rem;
-  width: 500px;
-  height: 400px;
+  width: 450px;
+  height: 350px;
   border: 2px solid black;
+  border-radius: 10px;
 }
 
 article h4 {
@@ -455,9 +456,10 @@ article.nextSlide {
 }
 
 .profileimg {
-  width: 500px;
-  height: 400px;
+  width: 450px;
+  height: 350px;
   border: 2px solid black;
+  border-radius: 10px;
 }
 
 .imgtop {
@@ -468,6 +470,7 @@ article.nextSlide {
   width: 300px;
   height: 300px;
   border: 2px solid black;
+  border-radius: 10px;
 }
 
 .fifteen {

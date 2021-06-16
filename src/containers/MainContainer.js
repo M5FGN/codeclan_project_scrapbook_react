@@ -6,6 +6,7 @@ import RoomContainer from "./RoomContainer";
 import NavBar from "../components/NavBar";
 import Request from "../helpers/request";
 import CreateRoom from "../components/CreateRoom";
+import UserService from ".././helpers/UserService";
 
 import {
   BrowserRouter as Router,
@@ -36,7 +37,10 @@ const MainContainer = () => {
   };
 
   const fetchUser = () => {
-    return fetch(url + user.id);
+    const userService = new UserService();
+    userService.getById(user.id).then((user) => {
+      setUser(user);
+    });
   };
 
   useEffect(() => {
@@ -70,7 +74,7 @@ const MainContainer = () => {
             />
             <Route
               path="/rooms/new"
-              render={() => <CreateRoom user={user} />}
+              render={() => <CreateRoom user={user} fetchUser={fetchUser} />}
             />
             <Route
               path={"/rooms/:id"}

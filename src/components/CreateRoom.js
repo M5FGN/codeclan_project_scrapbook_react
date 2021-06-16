@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import RoomService from "../helpers/RoomService";
 import UserService from "../helpers/UserService";
 
-const CreateRoom = ({ user }) => {
+const CreateRoom = ({ user, fetchUser }) => {
   let history = useHistory();
 
   const handleCreateRoom = (event) => {
@@ -23,9 +23,12 @@ const CreateRoom = ({ user }) => {
     roomService
       .post(newRoom)
       .then(() => roomService.getByRoomNameAndAdmin(roomName, admin))
-      .then((room) => userService.addRoomToUser(room, user.id));
-
+      .then((room) => {
+        userService.addRoomToUser(room, user.id);
+        fetchUser(user.id);
+      });
     history.push("/");
+    window.location.reload();
   };
   return (
     <div className="card formbox">

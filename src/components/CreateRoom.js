@@ -41,7 +41,7 @@ const CreateRoom = ({ user, fetchUser }) => {
         <label htmlFor="">Room Bio</label> <br></br>
         <input type="text" name="bio" autocomplete="off" /> <br></br>
         <label htmlFor="">Room Password</label> <br></br>
-        <input type="text" name="password" autocomplete="off" /> <br></br>
+        <input type="password" name="password" autocomplete="off" /> <br></br>
         <input className="button" type="submit" value="Add Room" />
       </form>
     </div>

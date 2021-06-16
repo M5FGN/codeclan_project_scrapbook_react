@@ -26,7 +26,7 @@ const NoAccess = ({ user, roomToJoin }) => {
       </h2>
       <h3>Enter Password to Join</h3>
       <form action="" onSubmit={handlePasswordToJoin}>
-        <input type="text" name="password" />
+        <input type="password" name="password" />
         <input type="submit" />
       </form>
       <h3>{error ? "Wrong Password" : null}</h3>

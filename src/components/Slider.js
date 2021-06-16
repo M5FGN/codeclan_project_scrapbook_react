@@ -59,7 +59,8 @@ function Slider({user}) {
 
           return (
             <article className={position} key={id}>
-              <img src={img_link} alt={caption} className="postimg" />
+              <h2 className="fifteen">Recent Posts</h2>
+              <img src={img_link} alt={caption} className="sliderimg" />
               <h4>{roomName}</h4>
               <p className="text">{caption}</p>
             </article>

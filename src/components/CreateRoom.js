@@ -32,11 +32,11 @@ const CreateRoom = ({ user }) => {
       <h2>Create Room</h2>
       <form action="" onSubmit={handleCreateRoom}>
         <label htmlFor="">Room Name:</label> <br></br>
-        <input type="text" name="title" /> <br></br>
+        <input type="text" name="title" autocomplete="off"/> <br></br>
         <label htmlFor="">Room Bio</label> <br></br>
-        <input type="text" name="bio" /> <br></br>
+        <input type="text" name="bio" autocomplete="off"/> <br></br>
         <label htmlFor="">Room Password</label> <br></br>
-        <input type="text" name="password" /> <br></br>
+        <input type="password" name="password" autocomplete="off"/> <br></br>
         <input className="button" type="submit" value="Add Room" />
       </form>
     </div>

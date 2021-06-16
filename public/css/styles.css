@@ -284,11 +284,13 @@ Slider
   display: flex;
   overflow: hidden;
 }
-.postimg {
+.sliderimg {
   margin-bottom: 1rem;
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 400px;
+  border: 2px solid black;
 }
+
 article h4 {
   text-transform: uppercase;
   font-size: 24px;
@@ -444,7 +446,7 @@ article.nextSlide {
 }
 
 .chattitle {
-  margin: 10px 0;
+  margin: 50px 0 10px 0;
 }
 
 .chathistory {
@@ -460,4 +462,14 @@ article.nextSlide {
 
 .imgtop {
   margin-top: 20px;
+}
+
+.postimg {
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
+}
+
+.fifteen {
+  margin-top: 15px;
 }

@@ -36,7 +36,7 @@ const UserForm = ({ setUser }) => {
         <label>Email:</label>
         <br></br>
         <input data-testid="user-name"
-          type="text"
+          type="text" autocomplete="off"
           placeholder="Enter E-mail"
           id="email"
         ></input>
@@ -44,7 +44,7 @@ const UserForm = ({ setUser }) => {
         <label>Password:</label>
         <br></br>
         <input data-testid="password"
-          type="text"
+          type="password" autocomplete="off"
           placeholder="Enter Password ..."
           id="password"
         ></input>

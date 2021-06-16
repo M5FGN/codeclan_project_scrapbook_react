@@ -20,42 +20,46 @@ const UserForm = ({ setUser }) => {
       .then((user) => {
         setUser(user);
         window.sessionStorage.setItem("userId", user.id);
-        console.log(window.sessionStorage.getItem("userId"));
-        history.push("/");
       });
   };
 
   return (
     <div>
-
       <Logo />
 
       <div className="card formbox">
         <h2 data-testid="log-in-scrapbook">Log In to ScrapBook ...</h2>
-      <form  data-testid="logged-in" onSubmit={handleLogIn}>
-        <label>Email:</label>
-        <br></br>
-        <input data-testid="user-name"
-          type="text"
-          placeholder="Enter E-mail"
-          id="email"
-        ></input>
-        <br></br>
-        <label>Password:</label>
-        <br></br>
-        <input data-testid="password"
-          type="text"
-          placeholder="Enter Password ..."
-          id="password"
-        ></input>
-        <br></br>
-        <input data-testid="log-in" className="button" type="submit" value="Log In ..."></input>
-      </form>
-      <h3>
-        <a href="/signup">Don't have an account?</a>
-      </h3>
-    </div>
-    <Footer />
+        <form data-testid="logged-in" onSubmit={handleLogIn}>
+          <label>Email:</label>
+          <br></br>
+          <input
+            data-testid="user-name"
+            type="text"
+            placeholder="Enter E-mail"
+            id="email"
+          ></input>
+          <br></br>
+          <label>Password:</label>
+          <br></br>
+          <input
+            data-testid="password"
+            type="text"
+            placeholder="Enter Password ..."
+            id="password"
+          ></input>
+          <br></br>
+          <input
+            data-testid="log-in"
+            className="button"
+            type="submit"
+            value="Log In ..."
+          ></input>
+        </form>
+        <h3>
+          <a href="/signup">Don't have an account?</a>
+        </h3>
+      </div>
+      <Footer />
     </div>
   );
 };

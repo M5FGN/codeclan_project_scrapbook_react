@@ -1,21 +1,21 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Logo from "../components/Logo";
 import { Link, useHistory } from "react-router-dom";
 import RoomContainer from "../containers/RoomContainer";
-import {GiHamburgerMenu} from 'react-icons/gi';
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const NavBar = ({ user, rooms }) => {
   let history = useHistory();
   const handleLogOut = () => {
     window.sessionStorage.clear();
-    window.location.reload(false);
+    history.push("/");
+    window.location.reload();
   };
 
   const [isActive, setActive] = useState("false");
   const handleToggle = () => {
     setActive(!isActive);
   };
-
 
   return (
     <div className="nav">
@@ -24,32 +24,29 @@ const NavBar = ({ user, rooms }) => {
       </div>
 
       <div className="search">
-      <RoomContainer rooms={rooms} user={user} />
+        <RoomContainer rooms={rooms} user={user} />
       </div>
       <div className={isActive ? "links show" : "links hide"}>
-
-      <div className="links">
-
-        <ul>
-          <li>
-            <Link to="/rooms/new">Add Room</Link>
-          </li>
-          <li>
-            {" "}
-            <Link to="/">My Profile</Link>
-          </li>
-          <li>
-            <Link to="/login" onClick={handleLogOut}>
-              Log Out
-            </Link>
-          </li>
-        </ul>
-      </div>
+        <div className="links">
+          <ul>
+            <li>
+              <Link to={`/${user.id}/rooms/new`}>Add Room</Link>
+            </li>
+            <li>
+              {" "}
+              <Link to={`/${user.id}`}>My Profile</Link>
+            </li>
+            <li>
+              <Link to="/" onClick={handleLogOut}>
+                Log Out
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
       <button className="hamburger" onClick={handleToggle}>
-    <GiHamburgerMenu/>
+        <GiHamburgerMenu />
       </button>
-      
     </div>
   );
 };

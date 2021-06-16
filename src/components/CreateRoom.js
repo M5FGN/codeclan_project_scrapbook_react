@@ -28,7 +28,7 @@ const CreateRoom = ({ user, fetchUser }) => {
         fetchUser(user.id);
       })
       .then(() => {
-        history.push("/");
+        history.push(`/${user.id}`);
         window.location.reload();
       });
   };

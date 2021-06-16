@@ -24,7 +24,7 @@ const RoomContainer = ({ user, rooms }) => {
       if (room) {
         return (
           <li key={index}>
-            <RoomListItem foundRoom={room} user={user} />
+            <RoomListItem user={user} foundRoom={room} user={user} />
           </li>
         );
       }
@@ -48,7 +48,6 @@ const RoomContainer = ({ user, rooms }) => {
         <div className="rooms-container">
           <ul>{roomList ? roomList : null}</ul>
         </div>
-
       </div>
     </>
   );

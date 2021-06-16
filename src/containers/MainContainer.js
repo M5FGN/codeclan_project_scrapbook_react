@@ -58,26 +58,26 @@ const MainContainer = () => {
           <NavBar rooms={rooms} user={user} />
           <Switch>
             <Route path="/login">
-              <Redirect to="/" />
+              <Redirect to={`/${user.id}`} />
             </Route>
             <Route
               exact
-              path="/"
+              path={`/${user.id}`}
               render={() => <UserContainer user={user} setUser={setUser} />}
             />
             <Route
               exact
-              path="/rooms"
+              path={`/${user.id}/rooms`}
               render={() => {
                 return <RoomContainer rooms={rooms} />;
               }}
             />
             <Route
-              path="/rooms/new"
+              path={`/${user.id}/rooms/new`}
               render={() => <CreateRoom user={user} fetchUser={fetchUser} />}
             />
             <Route
-              path={"/rooms/:id"}
+              path={`/${user.id}/rooms/:id`}
               render={(props) => {
                 const id = props.match.params.id;
                 const foundRoom = rooms.find((room) => {

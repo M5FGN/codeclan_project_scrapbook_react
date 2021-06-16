@@ -14,7 +14,7 @@ const NoAccess = ({ user, roomToJoin }) => {
     if (password === roomToJoin.password) {
       const request = new Request(url + roomToJoin.id);
       request.put(user);
-      history.push("/");
+      history.push(`/${user.id}`);
     } else {
       setError(!error);
     }

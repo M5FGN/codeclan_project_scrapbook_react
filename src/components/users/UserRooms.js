@@ -6,28 +6,28 @@ import {
   Link,
 } from "react-router-dom";
 
-
 const UserRooms = ({ user }) => {
   const userRoomList = user.rooms;
 
   const userRoomsNodes = userRoomList.map((room, index) => {
     return (
       <li key={index}>
-        <Link to={`/rooms/${room.id}`}>
-          <div className="card galleryitem"><h3>{room.roomName}</h3>
-          <p>{room.bio}</p>
+        <Link to={`${user.id}/rooms/${room.id}`}>
+          <div className="card galleryitem">
+            <h3>{room.roomName}</h3>
+            <p>{room.bio}</p>
           </div>
-          </Link>
+        </Link>
       </li>
     );
   });
 
   return (
     <div>
-    <h2>My Rooms</h2>
-    <div className="card gallery twenty">
-      <ul>{userRoomsNodes}</ul>
-    </div>
+      <h2>My Rooms</h2>
+      <div className="card gallery twenty">
+        <ul>{userRoomsNodes}</ul>
+      </div>
     </div>
   );
 };

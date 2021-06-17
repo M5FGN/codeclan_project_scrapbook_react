@@ -284,10 +284,11 @@ Slider
   display: flex;
   overflow: hidden;
 }
+
 .sliderimg {
   margin-bottom: 1rem;
-  width: 450px;
-  height: 350px;
+  width: 410px;
+  height: 320px;
   border: 2px solid black;
   border-radius: 10px;
 }
@@ -455,11 +456,19 @@ article.nextSlide {
   padding-right: 40px;
 }
 
-.profileimg {
+/* .profileimg {
   width: 450px;
   height: 350px;
   border: 2px solid black;
   border-radius: 10px;
+} */
+
+.roomimg, .profileimg {
+  width: 410px;
+  height: 320px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 0 20px;
 }
 
 .imgtop {

@@ -16,7 +16,7 @@ const RoomDetail = ({ foundRoom, fetchUser, setUser, user }) => {
   return (
     <div className="card detailsbox">
       <h2>{foundRoom.roomName}</h2>
-      <img className="profileimg" src={foundRoom.image ? foundRoom.image : null} alt="" />
+      <img className="roomimg" src={foundRoom.image ? foundRoom.image : null} alt="" />
       <p>{foundRoom.bio}</p>
       <RoomUsers foundRoom={foundRoom} />
       {user.email === foundRoom.admin ? (

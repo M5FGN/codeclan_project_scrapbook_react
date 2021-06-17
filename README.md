@@ -48,11 +48,11 @@ Source: [Front End Repo](https://github.com/M5FGN/codeclan_project_scrapbook_rea
 
 # App Screenshots
 
-## Screenshot of App Home Page
-![App Login Page]() 
+## Screenshot of App Log In Page
+![App Login Page](src/images/readmelogin.png)  
 
 ## Screenshot of Profile Page
-![Profile Page Screenshot]() 
+![Profile Page Screenshot](src/images/readmeprofile.png) 
 
 ## Screenshot of Room Page
-![Room Page Screenshot]() 
+![Room Page Screenshot](src/images/readmeroom.png) 

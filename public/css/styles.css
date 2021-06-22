@@ -6,10 +6,13 @@ body {
   background-attachment: fixed;
 }
 
-
-h1, h2, p, .button, form > label, .links {
-    font-family: 'El Messiri', sans-serif;
-
+h1,
+h2,
+p,
+.button,
+form > label,
+.links {
+  font-family: "El Messiri", sans-serif;
 }
 
 h1 {
@@ -31,24 +34,23 @@ h2 {
   grid-auto-flow: row;
 }
 
-.logo { 
-  grid-area: 1 / 1 / 2 / 3; 
+.logo {
+  grid-area: 1 / 1 / 2 / 3;
 }
 
-.search { 
-  grid-area: 1 / 2 / 2 / 3; 
+.search {
+  grid-area: 1 / 2 / 2 / 3;
 }
 
-.links { 
-  grid-area: 1 / 3 / 2 / 4; 
+.links {
+  grid-area: 1 / 3 / 2 / 4;
 }
 
-.hamburger { 
+.hamburger {
   display: none;
 }
 
 @media screen and (max-width: 1460px) {
-
   .nav {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
@@ -61,22 +63,26 @@ h2 {
       "logo links"
       "search search";
   }
-  
-  .logo { grid-area: logo; }
-  
-  .links { grid-area: links; }
-  
-  .search { grid-area: search; 
-    margin-bottom: 20px;}
-  
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .links {
+    grid-area: links;
+  }
+
+  .search {
+    grid-area: search;
+    margin-bottom: 20px;
+  }
+
   .search-bar-element {
     padding: 0px !important;
   }
-
 }
 
 @media screen and (max-width: 850px) {
-
   .nav {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
@@ -90,30 +96,35 @@ h2 {
       "links links"
       "search search";
   }
-  
-  .logo { grid-area: logo; }
-  
-  .hamburger { grid-area: hamburger; }
-  
-  .links { 
-    grid-area: links; 
+
+  .logo {
+    grid-area: logo;
   }
 
-  .show { 
+  .hamburger {
+    grid-area: hamburger;
+  }
+
+  .links {
+    grid-area: links;
+  }
+
+  .show {
     display: block;
-  } 
+  }
   .hide {
     display: none;
-  }  
-  
-  .search { grid-area: search;
-  margin-bottom: 20px; }
-  
+  }
 
-  .hamburger { 
+  .search {
+    grid-area: search;
+    margin-bottom: 20px;
+  }
+
+  .hamburger {
     display: block;
     font-size: 50px;
-    padding:20px;
+    padding: 20px;
     text-align: right !important;
     background: none;
     border: none;
@@ -122,22 +133,19 @@ h2 {
   .search-bar-element {
     padding: 0px !important;
   }
-
 }
-
 
 .links {
   text-align: right;
 }
 
 .card {
-    border: 2px solid white;
-    background-color: white;
-    border-radius: 10px;
-    opacity: 70%;
-    box-shadow: 5px 3px 22px 1px silver;
-    justify-content: center;
-
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 10px;
+  opacity: 70%;
+  box-shadow: 5px 3px 22px 1px silver;
+  justify-content: center;
 }
 
 .links > ul > li {
@@ -198,20 +206,17 @@ h2 {
   margin: 20px;
 }
 
-
 .featurebox {
   margin: 20px 20px 0 0;
-
-  }
+}
 .gallery > ul > li {
-  font-size:20px;
+  font-size: 20px;
   display: inline-block;
   padding: 30px 30px 0 0;
 }
 
-.twenty { 
-    margin: 0 20px;
-
+.twenty {
+  margin: 0 20px;
 }
 
 .gallery {
@@ -220,7 +225,6 @@ h2 {
   flex-wrap: wrap; */
   margin: 0 10px;
 }
-
 
 .galleryitem {
   padding: 30px;
@@ -233,7 +237,8 @@ form > label {
   margin: 20px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="password"] {
   width: 50%;
   padding: 5px;
   margin: 10px;
@@ -248,7 +253,6 @@ input[type="file"] {
 input[type="file" i] {
   font-size: 20px;
 }
-
 
 .formbox {
   width: 60%;
@@ -345,7 +349,6 @@ article.nextSlide {
   transform: translateX(100%);
 }
 
-
 .roomusersitems {
   display: inline-block;
   padding: 10px;
@@ -364,7 +367,6 @@ article.nextSlide {
   width: 100%;
   z-index: 0;
 }
-
 
 .search-bar {
   width: 100% !important;
@@ -385,8 +387,6 @@ article.nextSlide {
   text-align: center;
 }
 
-
-
 .post {
   width: 330px;
   display: inline-block;
@@ -395,9 +395,9 @@ article.nextSlide {
 }
 
 .postitem {
-    list-style-type: none;
-    margin-inline-start: 0;
-    padding: 0;
+  list-style-type: none;
+  margin-inline-start: 0;
+  padding: 0;
 }
 
 .poststitle {
@@ -438,9 +438,14 @@ article.nextSlide {
 .chatbox {
   margin-top: 20px;
   margin-right: 20px;
+  height: 475px;
 }
 .chatinput {
   padding: 15px !important;
+}
+
+.chat-box-form {
+  align-items: center;
 }
 
 .chattitle {
@@ -450,6 +455,9 @@ article.nextSlide {
 .chathistory {
   list-style-type: none;
   padding-right: 40px;
+  height: 270px;
+  overflow-y: scroll;
+  transform: rotateX(180deg);
 }
 
 .profileimg {

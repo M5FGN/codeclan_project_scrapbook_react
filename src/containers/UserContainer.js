@@ -17,13 +17,13 @@ const UserContainer = ({ user, setUser }) => {
 
   return (
     <div>
-      <h1>{user.name}</h1>
+      <h1>{user.name}'s Profile</h1>
       <div className="top">
         <div className="detail">
           <UserDetail user={user} setUser={setUser} />
         </div>
         <div className="feature">
-          <Slider user={user}/>
+          <Slider user={user} />
         </div>
       </div>
 

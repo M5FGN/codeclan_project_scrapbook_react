@@ -115,7 +115,7 @@ const Chat = ({ foundRoom, user }) => {
         {messageList}
         {listMsgs}
       </ul>
-      <form action="" onSubmit={sendMessage}>
+      <form action="" onSubmit={sendMessage} className="chat-box-form">
         <input
           className="chatinput"
           data-testid="dmessage"

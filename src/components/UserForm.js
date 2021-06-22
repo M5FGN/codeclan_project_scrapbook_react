@@ -27,7 +27,7 @@ const UserForm = ({ setUser }) => {
     <div>
       <Logo />
       <div className="card formbox">
-        <h2 data-testid="log-in-scrapbook">Log In to ScrapBook ...</h2>
+        <h2 data-testid="log-in-scrapbook">Log In to ScrapBook</h2>
         <form data-testid="logged-in" onSubmit={handleLogIn}>
           <label>Email:</label>
           <br></br>
